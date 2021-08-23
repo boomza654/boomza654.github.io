@@ -1,0 +1,242 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto+Mono&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+/* :root {
+    --monokai-black: #272822;
+    --monokai-gray: #797979;
+    --monokai-white: #ebebeb;
+    --monokai-yellow: #E6DB74;
+    --monokai-green: #A6E22E;
+    --monokai-orange: #FD971F;
+    --monokai-purple: #AE81FF;
+    --monokai-pink: #F92672;
+    --monokai-blue: #66D9EF;
+
+    --monokai-font: "Roboto Mono";
+    --monokai-font-size: 12px;
+    
+    font-family: var(--monokai-font);
+    font-size: var(--monokai-font-size);
+    color: var(--monokai-white);
+    background-color: var(--monokai-black);
+} */
+
+:root {
+    --theme-black: #272822;
+    --theme-gray: #a5a4a4;
+    --theme-white: #ebebeb;
+    --theme-purple: #AE81FF;
+    --theme-pink: #F92672;
+    --theme-blue: #669def;
+
+    --theme-font: "Quicksand";
+    --theme-font-size: 14px;
+    
+    font-family: var(--theme-font);
+    font-size: var(--theme-font-size);
+    color: var(--theme-black);
+    background-color: var(--theme-white);
+}
+
+
+body {
+    padding: 0px; 
+    margin: 0px; 
+    width: 100vw;
+    height: 100vh;
+}
+h1 {
+    font-weight: normal;
+}
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+.flex-u {
+    flex: 1
+}
+.pad-1 {
+    padding: 1rem;
+}
+/* .yellow {
+    color: var(--theme-yellow);
+} */
+.gray {
+    color: var(--theme-gray);
+}
+.pink {
+    color: var(--theme-pink);
+}
+.purple {
+    color: var(--theme-purple);
+}
+.white {
+    color: var(--theme-white)
+}
+/* .green {
+    color: var(--theme-green);
+} */
+.blue {
+    color: var(--theme-blue);
+}
+
+#view {
+    display: none;
+    border: 1px solid black;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative; /* to have DOM element inside able to do position abosulte*/
+}
+#randombutton1 {
+    position: absolute;
+    top: 50px;
+    left: -20px;
+}
+
+
+/* Intro Node */
+
+#intro {
+    width: 80vw;
+    height: 80vh;
+}
+#intro-textcontainer {
+    width: 500px;
+}
+
+#intro-profilepic {
+    width: 200px;
+    border-radius: 50%;
+    margin: auto;
+}
+
+#intro-text1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+#intro-text2 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* Profile section*/
+#profile {
+    width: 700px;
+    height: 350px;
+}
+#profile-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    font-size: 1.25rem;
+}
+
+#profile-header {
+    grid-column: 1 / 3;
+    text-align: start;
+    padding: 0 1rem 0 1rem;
+}
+.profile-paren {
+    text-align: start;
+    padding: 0 1rem 0 1rem;
+}
+.profile-col1 {
+    text-align: end;
+    padding: 0.5rem;
+}
+.profile-col2 {
+    text-align: start;
+    padding: 0.5rem;
+    justify-self: middle;
+}
+
+/* Contact us section */
+#contact {
+    font-size: 1.25rem;
+    width: 750px;
+    height: 250px;
+}
+.contact-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 25%;
+}
+#contact a {
+    text-decoration: none;
+    color: var(--monokai-white);
+}
+
+.contact-zoomonhover:hover {
+    transition: transform 0.5s;
+    transform: scale(1.05);
+    transform-origin: top left;
+}
+
+/* Courses section */
+#courses {
+    font-size : 1.25rem;
+    width: 750px;
+    height: 500px;
+}
+
+.courses-container {
+    /* display: grid;
+    grid-template-columns: auto auto; */
+    display: flex;
+    flex-direction: column;
+
+    /* padding-left: 4rem; */
+    font-size: 1.25rem;
+}
+
+.courses-indent {
+    padding-left: 4rem;
+}
+
+
+/* activities section*/
+#activities {
+    font-size: 1.25rem;
+}
+
+#activities-container {
+    display: flex;
+    flex-direction: row;
+}
+.activities-card {
+    background-size: cover;
+    background-position: center;
+    
+    height: 300px;
+    cursor: pointer;
+
+    transition: width 0.5s, filter 0.5s;
+    filter: sepia(80%) blur(1px);
+    min-width: 150px;
+    width: 200px;
+}
+.activities-card * {
+    opacity : 0;
+}
+.activities-card:hover {
+    transition: width 0.5s, filter 0.5s;
+    filter : none;
+    width: 300px;
+    transform-origin: center;
+}
+.activities-card:hover * {
+    transition: opacity 0.5s;
+    opacity: 1;
+}
+
+
+.activities-desc {
+    background-image: linear-gradient( rgba(0,0,0,0),  rgba(0,0,0,0.9) 90%);
+    height: 100px;
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Test</title>
+  <link rel="stylesheet" href="./index.css">
+  <style>
+   
+
+  </style>
+  
+</head>
+<body>
+  <!-- Expose elkjs layouter to the index bundle -->
+  <script src="./elkjs.bundle.js" type="application/javascript"></script> 
+
+  <!--  This exports the 'gamemodule.Game' module out -->
+  <script src="./index.bundle.js" type="application/javascript"></script> 
+  <!-- view is for manipulating with overflow hidden for 
+    the DOM node that is supposed to be in the canvass -->
+  <div id="view">  
+    <!-- stage is for containing entire stage in (so moving entire stage 
+      and let the view trim the rest is how camera port is going to wrok) -->
+    <div id="stage">
+      <canvas id="screen" width="400" height="400">
+      </canvas>
+      <input type="button" id="randombutton1" value="Press me"></input>
+    </div>
+  </div>
+
+
+  <script type="application/javascript">
+    var stageDiv = document.getElementById('stage');
+    var visEngine = new visModule.Game({
+      stageDiv: stageDiv
+    });
+
+    window.addEventListener('keydown', visEngine.keyDown);
+    window.addEventListener('keyup', visEngine.keyUp);
+    // window.setInterval(gameInstance.update, 1000/ gameModule.Game.frameRate);
+
+    var previousTimeStamp;
+
+    function step(timestamp) {
+      if (previousTimeStamp !== undefined) {
+        visEngine.update({
+          dt: timestamp - previousTimeStamp
+        });
+      }
+      previousTimeStamp = timestamp;
+      window.requestAnimationFrame(step);
+    }
+
+    // window.requestAnimationFrame(step);
+    
+    
+  </script>
+
+
+
+  <!-- ์ Do a normal web design here  -->
+  <div id="intro" class="flex-row">
+    <!-- <div class="flex-u"></div>  -->
+    <div class="pad-1 flex-col" id="intro-textcontainer">
+      <div class="flex-u"></div>
+      <div class="flex-u" id="intro-text1">Hello, I'm Boom !!</div>
+      <div class="flex-u"></div>
+      <div class="flex-u blue" id="intro-text2">"An aspiring software developer\n"</div>
+      <div class="flex-u"></div>
+    </div>
+    <img id="intro-profilepic" src="./images/profilePIC.jpg">
+    <!-- <div class="flex-u"></div>  -->
+  </div>
+
+  
+  <div id="profile">
+    <!-- <div class="flex-u"></div>  -->
+    <div class="pad-1" id="profile-container">
+      <div id="profile-header"><h1> Profile </h1></div>    
+      <div class="profile-paren">{</div>                <div class="profile-col2"></div>
+      <div class="profile-col1">Name:</div>               <div class="profile-col2"><span class="blue">"Krittamate Tiankanon"</span>,</div>
+      <div class="profile-col1">Nickname:</div>               <div class="profile-col2"><span class="blue">"Boom"</span>,</div>
+      <div class="profile-col1">Nationality:</div>        <div class="profile-col2"><span class="blue">"Thai"</span>,</div>
+      <div class="profile-col1">College:</div>            <div class="profile-col2"><span class="blue">"MIT"</span> <span class="gray">/* Massachusetts Institute of Technology */</span>,</div>
+      <div class="profile-col1">Year:</div>               <div class="profile-col2"><span class="purple">4</span>,</div>
+      <div class="profile-col1">Major:</div>               <div class="profile-col2"><span class="blue">"Electrical Engineer and Computer Science"</span>,</div>
+      
+      <div class="profile-paren">}</div>                   <div class="profile-col2"></div>
+      <div ></div>
+    </div>
+    <!-- <div class="flex-u"></div>  -->
+  </div>
+
+  <div id="contact">
+    <div class="pad-1" id="contact-container">
+      <h1 class="pad-1">Contact</h1>
+      <a href="mailto:krittamate.t@gmail.com" class="blue">
+        <div class="flex-row contact-zoomonhover">
+          <img src="./images/gmail.PNG" class="contact-icon pad-1">
+          <div class="flex-col pad-1">
+            <div class="flex-u"></div>
+            <span>
+              : <span class="pink">redirect</span>(<span class="blue">"krittamate.t@gmail.com"</span>);
+            </span>
+            <div class="flex-u"></div>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://www.linkedin.com/in/krittamate-tiankanon-4892b4195/">
+        <div class="flex-row contact-zoomonhover">
+          <img src="./images/linkedin.png" class="contact-icon pad-1">
+          <div class="flex-col pad-1">
+            <div class="flex-u"></div>
+            <span>
+              : <span class="pink">redirect</span>(<span class="blue">"linkedin.com/in/krittamate-tiankanon-4892b4195"</span>);
+            </span>
+            <div class="flex-u"></div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+
+  <div id="courses" class="pad-1">
+    <h1 class="pad-1">Courses Taken</h1>
+    <div class="pad-1">[</div>
+    <div class="courses-container courses-indent">
+      <div ><span class="blue">"6.823 Computer System Architecture"</span>,</div>
+      <div ><span class="blue">"6.814 Database Systems"</span>,</div>
+      <div ><span class="blue">"6.172 Performance Engineering of Software Systems"</span>,</div>
+      <div ><span class="blue">"6.858 Computer Systems Security"</span>,</div>
+      <div ><span class="blue">"6.148 Web Lab: A Web Programming Class and Competition"</span>,</div>
+      <div ><span class="blue">"6.147 The Battlecode Programming Competition"</span>,</div>
+      <div ><span class="blue">"6.031 Software Construction"</span>,</div>
+      <div ><span class="blue">"6.036 Introduction to Machine Learning"</span>,</div>
+      <div ><span class="blue">"6.011 Signals, Systems and Inference"</span>,</div>
+      <div ><span class="blue">"6.033 Computer System Engineering"</span>,</div>
+      <div ><span class="blue">"6.046 Design and Analysis of Algorithms"</span>,</div>
+      <div ><span class="blue">"6.004 Computational Structure"</span>,</div>
+    </div>
+    <div class="pad-1">]</div>
+  </div>
+
+  <div id="activities" class="pad-1">
+    <h1 class="pad-1">Activities/Projects</h1>
+    <div id="activities-container">
+      
+      <div class="activities-card flex-col" style="background-image: url('./images/visualizercode.PNG');">
+        <div class="flex-u"></div>
+        <div class="activities-desc flex-col">
+          <div class="flex-u"></div>
+          <span class="white pad-1">Minispec Visualizer</span>
+        </div>
+      </div>
+
+      <div class="activities-card flex-col" style="background-image: url('./images/battlecode.PNG');">
+        <div class="flex-u"></div>
+        <div class="activities-desc flex-col">
+          <div class="flex-u"></div>
+          <span class="white pad-1">Battlecode Competition</span>
+        </div>
+      </div>
+
+      <div class="activities-card flex-col" style="background-image: url('./images/journext.PNG');">
+        <div class="flex-u"></div>
+        <div class="activities-desc flex-col">
+          <div class="flex-u"></div>
+          <span class="white pad-1">Websites</span>
+        </div>
+      </div>
+      
+      <div class="activities-card flex-col" style="background-image: url('./images/codejam.PNG');">
+        <div class="flex-u"></div>
+        <div class="activities-desc flex-col">
+          <div class="flex-u"></div>
+          <span class="white pad-1">Competitive Programming</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Test</title>
+  <link rel="stylesheet" href="./index.css">
+  <style>
+   
+
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <!-- Expose elkjs layouter to the index bundle -->
+  <script src="./elkjs.bundle.js" type="application/javascript"></script> 
+
+  <!--  This exports the 'gamemodule.Game' module out -->
+  <script src="./index.bundle.js" type="application/javascript"></script> 
+  <!-- view is for manipulating with overflow hidden for 
+    the DOM node that is supposed to be in the canvass -->
+  <div id="view">  
+    <!-- stage is for containing entire stage in (so moving entire stage 
+      and let the view trim the rest is how camera port is going to wrok) -->
+    <div id="stage">
+      <canvas id="screen" width="400" height="400">
+      </canvas>
+      <input type="button" id="randombutton1" value="Press me"></input>
+    </div>
+  </div>
+
+
+  <script type="application/javascript">
+    var stageDiv = document.getElementById('stage');
+    var visEngine = new visModule.Game({
+      stageDiv: stageDiv
+    });
+
+    window.addEventListener('keydown', visEngine.keyDown);
+    window.addEventListener('keyup', visEngine.keyUp);
+    // window.setInterval(gameInstance.update, 1000/ gameModule.Game.frameRate);
+
+    var previousTimeStamp;
+
+    function step(timestamp) {
+      if (previousTimeStamp !== undefined) {
+        visEngine.update({
+          dt: timestamp - previousTimeStamp
+        });
+      }
+      previousTimeStamp = timestamp;
+      window.requestAnimationFrame(step);
+    }
+
+    // window.requestAnimationFrame(step);
+    
+    
+  </script>
+
+
+
+  <!-- ์ Do a normal web design here  -->
+  <div class="node-container">
+    <div id="intro">
+      <div class="intro-page">
+        <div class="flex-col intro-textcontainer">
+          <div class="intro-text1">Hello, I'm Boom !!</div>
+          <div class="blue intro-text2">"An aspiring software developer"</div>
+        </div>
+        <img class="intro-profilepic" src="./images/profilePIC.jpg">
+      </div>
+      <!-- <div class="intro-arrowtext">Click or drag to move around</div> -->
+      <div class="intro-arrowcontainer"><div class="intro-arrow"></div></div>
+    </div>
+  </div>
+
+  
+  <div class="node-container">
+    <div id="main">
+      <h1 class="main-header">Boom</h1>
+      <div class="main-flex">
+        <div class="main-table">
+          <div class="profile-col1">Name:</div>               <div class="profile-col2"><span class="blue">"Krittamate Tiankanon"</span></div>
+         <div class="profile-col1">Nationality:</div>        <div class="profile-col2"><span class="blue">"Thai"</span></div>
+          <div class="profile-col1">College:</div>            <div class="profile-col2"><span class="blue">"MIT"</span> <span class="gray">/* Massachusetts Institute of Technology */</span></div>
+          <div class="profile-col1">Year:</div>               <div class="profile-col2"><span class="purple">4</span></div>
+          <div class="profile-col1">Major:</div>               <div class="profile-col2"><span class="blue">"Electrical Engineer and Computer Science"</span></div>
+          <div class="profile-col1">  </div>             <div class="profile-col2">  </div>
+          <div class="profile-col1">Courses:</div>             <div class="profile-col2"><div class="main-listitem-arrow"></div></div>
+          <div class="profile-col1">Experiences:</div>     <div class="profile-col2"><div class="main-listitem-arrow"></div></div>
+          <div class="profile-col1">Projects:</div>             <div class="profile-col2"><div class="main-listitem-arrow"></div></div>
+          <div class="profile-col1">Contact:</div>             <div class="profile-col2"><div class="main-listitem-arrow"></div></div>
+        </div>
+        <!-- <div class="main-list">
+          <div class="main-listitem"><div class="main-listitem-arrow"></div>Profile</div>
+          <div class="main-listitem"><div class="main-listitem-arrow"></div>Contact</div>
+          <div class="main-listitem"><div class="main-listitem-arrow"></div>Courses</div>
+          <div class="main-listitem"><div class="main-listitem-arrow"></div>Projects</div>
+        </div> -->
+      </div>
+      
+    </div>
+  </div>
+
+
+  <div class="node-container">
+    <div id="profile">
+      <!-- <div class="flex-u"></div>  -->
+      <div class="profile-container">
+        <div id="profile-header">
+          <h1> Profile </h1>
+          <div class="profile-back">
+            <div class="profile-back-arrow"></div>
+            <span>Back</span>
+          </div>
+        </div>    
+        <div class="profile-paren">{</div>                <div class="profile-col2"></div>
+        
+        
+        <div class="profile-paren">}</div>                   <div class="profile-col2"></div>
+        <div ></div>
+      </div>
+      <!-- <div class="flex-u"></div>  -->
+    </div>
+  </div>
+ 
+
+  <div class="node-container">
+    <div id="contact">
+      <div class="contact-header">
+        <h1>Contact</h1>
+        <div class="contact-back">
+          <div class="contact-back-arrow"></div>
+          <span>Back</span>
+        </div>
+      </div>
+      <a href="mailto:krittamate.t@gmail.com" class="blue">
+        <div class="contact-item">
+          <img src="./images/gmail.PNG" class="contact-icon">
+          <span>
+            : <span class="pink">redirect</span>(<span class="blue">"krittamate.t@gmail.com"</span>);
+          </span>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/krittamate-tiankanon-4892b4195/">
+        <div class="contact-item">
+          <img src="./images/linkedin.png" class="contact-icon">
+          <span>
+            : <span class="pink">redirect</span>(<span class="blue">"linkedin.com/in/krittamate-tiankanon-4892b4195"</span>);
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+
+  <div class="node-container">
+    <div id="courses">
+      <div class="courses-header">
+        <h1>Courses Taken</h1>
+        <div class="courses-back">
+          <div class="courses-back-arrow"></div>
+          <span>Back</span>
+        </div>
+      </div>
+      <div>[</div>
+      <div class="courses-container courses-indent">
+        <div ><span class="blue">"6.823 Computer System Architecture"</span>,</div>
+        <div ><span class="blue">"6.814 Database Systems"</span>,</div>
+        <div ><span class="blue">"6.172 Performance Engineering of Software Systems"</span>,</div>
+        <div ><span class="blue">"6.858 Computer Systems Security"</span>,</div>
+        <div ><span class="blue">"6.148 Web Lab: A Web Programming Class and Competition"</span>,</div>
+        <div ><span class="blue">"6.147 The Battlecode Programming Competition"</span>,</div>
+        <div ><span class="blue">"6.031 Software Construction"</span>,</div>
+        <div ><span class="blue">"6.036 Introduction to Machine Learning"</span>,</div>
+        <div ><span class="blue">"6.011 Signals, Systems and Inference"</span>,</div>
+        <div ><span class="blue">"6.033 Computer System Engineering"</span>,</div>
+        <div ><span class="blue">"6.046 Design and Analysis of Algorithms"</span>,</div>
+        <div ><span class="blue">"6.004 Computational Structure"</span>,</div>
+      </div>
+      <div>]</div>
+    </div>
+  </div>
+
+
+  <div class="node-container">
+    <div id="activities">
+      <div class="activities-header">
+        <h1>Activities / Project</h1>
+        <div class="activities-back">
+          <div class="activities-back-arrow"></div>
+          <span>Back</span>
+        </div>
+      </div>
+      <div class="activities-container">
+        
+        <div class="activities-card" style="background-image: url('./images/visualizercode.PNG');">
+          <div class="activities-desc">
+            <span class="white pad-1">Minispec Visualizer</span>
+          </div>
+        </div>
+
+      </div>
+  
+      <div class="activities-container">
+  
+        <div class="activities-card" style="background-image: url('./images/battlecode.PNG');">
+          <div class="activities-desc">
+            <span class="white pad-1">Battlecode Competition</span>
+          </div>
+        </div>
+  
+        <div class="activities-card" style="background-image: url('./images/journext.PNG');">
+          <div class="activities-desc">
+            <span class="white pad-1">Journext Planner</span>
+          </div>
+        </div>
+        
+        <div class="activities-card" style="background-image: url('./images/codeforces.PNG');">
+          <div class="activities-desc">
+            <span class="white pad-1">Competitive Programming</span>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <div class="node-container">
+    <div id="activity1" class="activity" >
+      <div class="activity-header">
+        <div>
+          <h1>Minispec Visualizer</h1>
+          <h3>HDL circuit visualizer</h3>
+        </div>
+        <div class="activity-back">
+          <div class="activity-back-arrow"></div>
+          <span>Back</span>
+        </div>
+      </div>
+      <p>Minispec Visualizer is a program that visualizes Hardware Description Language code (Minispec) 
+        into a schematic circuit with options to choose multiple depths of circuit visualization,
+      varying from gate level to top-module behavioral level.</p>
+
+      <p>Released as a part of Minispec open-source repository and used in 6.004
+      Computational Structures course’s infrastructure to facilitate students in learning
+      about hardware architecture.</p>
+      <img src="./images/visualizercode.PNG" class="activity-image"/>
+      <a href="https://github.mit.edu/boomzaza/minispec/tree/visualizer">
+        <div class="activity-link">
+          
+          <div class="activity-link-arrow"></div>
+          <span class="pink"> redirect </span>
+          (
+          <span class="blue">
+            "github.mit.edu/boomzaza/minispec/tree/visualizer"
+          </span>
+          );
+
+        </div>
+      </a>
+    </div>
+  </div>
+
+
+  <div class="node-container">
+    <div id="activity2" class="activity" >
+      <div class="activity-header">
+        <div>
+          <h1>Battlecode Competition</h1>
+          <h3>1st place Battlecode First-timer tournament</h3>
+        </div>
+        <div class="activity-back">
+          <div class="activity-back-arrow"></div>
+          <span>Back</span>
+        </div>
+      </div>
+      <p>Battlecode is a real-time strategy game, for which competitors write an AI player to strategically manage a robot army and control how robots work together to defeat the enemy team. </p>
+      
+      <img src="./images/battlecodeBig.PNG" class="activity-image"/>
+      <a href="http://2021.battlecode.org/visualizer.html?tournamentMode&https://2021.battlecode.org/replays/3d133cd909d71eb244ae41d88e40ef-0.bc21">
+        <div class="activity-link">
+          
+          <div class="activity-link-arrow"></div>
+          <span class="pink"> watch </span>
+          (
+          <span class="blue">
+            "some of our Battlecode matches"
+          </span>, <br/>
+          <span class="purple">
+            our_team
+          </span>
+          <span class="pink">
+            =
+          </span>
+          
+          <span class="blue">
+            "Dis Team"
+          </span>
+          );
+
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="node-container">
+    <div id="activity3" class="activity" >
+      <div class="activity-header">
+        <div>
+          <h1>Journext</h1>
+        </div>
+        <div class="activity-back">
+          <div class="activity-back-arrow"></div>
+          <span>Back</span>
+        </div>
+      </div>
+      <p>A travel planning website that merges map, flight, hotels, and calendar into one web app.</p>
+      <p> Created with React.js and KonvaJS using geolocation data from OpenStreetMap API</p>
+      <img src="./images/journextBig.PNG" class="activity-image"/>
+      <a href="https://journext.herokuapp.com">
+        <div class="activity-link">
+          
+          <div class="activity-link-arrow"></div>
+          <span class="pink"> try_out </span>
+          (
+          <span class="blue">
+            "journext.herokuapp.com"
+          </span>
+          );
+
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="node-container">
+    <div id="activity4" class="activity" >
+      <div class="activity-header">
+        <div>
+          <h1>Competitive Programming</h1>
+        </div>
+        <div class="activity-back">
+          <div class="activity-back-arrow"></div>
+          <span>Back</span>
+        </div>
+      </div>
+      <p>- Participated in the 2nd round of Facebook Hacker Cup 2019 and placed in the TOP 500 using C++ code only.</p>
+      <p>- Received 15th place among 13885 competitors on Codeforces competition round #569 (Division 2)</p>
+      <p>- Participated in the 2nd round of Google Codejam 2019.</p>        
+      
+    </div>
+  </div>
+
+
+  <div class="node-container">
+    <div id="experiences">
+      <div class="experiences-header">
+        <h1>Work Experiences</h1>
+        <div class="experiences-back">
+          <div class="experiences-back-arrow"></div>
+          <span>Back</span>
+        </div>
+      </div>
+      <div class="experiences-container">
+        
+        <div class="experiences-card">
+          <div class="experiences-card-top">
+            <div style="background-image: url('./images/MIT.png');" class="experiences-card-icon"></div>
+            <div class="experience-card-top-textcontainer">
+              <h2 class="pink">Teaching and laboratory assistant</h2>
+              <h3 class="blue">Massachusetts Institute of Technology </h3>
+              <h3 class="gray">Spring 2019 - Now </h3>
+            </div>
+          </div>
+          <div class="experiences-card-desc">
+            <p>
+              Provided 10-15 hours per week both in person and online (Piazza) to guide students through their problems throughout the course.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="experiences-card">
+          <div class="experiences-card-top">
+            <div style="background-image: url('./images/tencent.png');" class="experiences-card-icon"></div>
+            <div class="experience-card-top-textcontainer">
+              <h2 class="pink">Full-stack internship</h2>
+              <h3 class="blue">Tencent (Thailand) Company Ltd.</h3>
+              <h3 class="gray">Summer 2021 </h3>
+            </div>
+          </div>
+          <div class="experiences-card-desc">
+            <p>Created a hybrid machine learning model for automatic unsupervised text clustering
+            especially about news.</p>
+            <p>Develop automated incremental news scraping and machine learning training
+            pipeline to integrate into the continuous deployment cycle.</p>
+          </div>
+        </div>
+
+        <div class="experiences-card">
+          <div class="experiences-card-top">
+            <div style="background-image: url('./images/scb.png');" class="experiences-card-icon"></div>
+            <div class="experience-card-top-textcontainer">
+              <h2 class="pink">Data scientist internship</h2>
+              <h3 class="blue">Siam Commercial Bank Public Company Ltd.</h3>
+              <h3 class="gray">Summer 2020 </h3>
+            </div>
+          </div>
+          <div class="experiences-card-desc">
+            <p>Developed a machine learning model for Chatbot’s text classification in Thai
+              language, which specializes in classifying finance-related intents from the input text.</p>
+            <p>The model achieved at least 20% higher accuracy compared to the Dialogflow
+              chatbot agent counterpart. </p>
+          </div>
+        </div>
+
+        <div class="experiences-card">
+          <div class="experiences-card-top">
+            <div style="background-image: url('./images/full.png');" class="experiences-card-icon"></div>
+            <div class="experience-card-top-textcontainer">
+              <h2 class="pink">Software developer internship</h2>
+              <h3 class="blue">Siam Filter Products Ltd.</h3>
+              <h3 class="gray">Summer 2019 </h3>
+            </div>
+          </div>
+          <div class="experiences-card-desc">
+            <p>Developed SQL database management GUI and framework using .NET Framework
+              C# to provide flexible data organization for the company. </p>
+            <p>Enabled synchronization of existing data using Micorsoft Azure SQL database. </p>
+          </div>
+        </div>
+
+        <div class="experiences-card">
+          <div class="experiences-card-top">
+            <div style="background-image: url('./images/nerdynite.jpg');" class="experiences-card-icon"></div>
+            <div class="experience-card-top-textcontainer">
+              <h2 class="pink">Co-founder</h2>
+              <h3 class="blue">Nerdy Nite educational program</h3>
+              <h3 class="gray">Summer 2018 </h3>
+            </div>
+          </div>
+          <div class="experiences-card-desc">
+            <p>Nerdy Nite is an educational program that aims to provide a discussion-based
+              learning environment in Thailand about human rights and related topics.</p>
+            <p>Helped incorporate the use of a web-based discussion tracker to analyze on how
+              students are participating in discussions. </p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</body>
+</html>
