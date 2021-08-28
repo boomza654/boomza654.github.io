@@ -3,12 +3,14 @@
 :root {
     --theme-black: #272822;
     --theme-gray: #a5a4a4;
+    --theme-dark-gray: #4b4a4a;
     --theme-white: #ebebeb;
     --theme-purple: #AE81FF;
     --theme-pink: #F92672;
-    --theme-blue: #669def;
+    --theme-blue: #61a0ff;
     --theme-red: #FF0052;
     --theme-brown: #A52626;
+    --theme-light-pink: #ffbed6;
 
     --theme-font: "Quicksand";
     --theme-font-size: 18px;
@@ -122,16 +124,27 @@ h3 {
 
 /* Node container */
 .node-container {
-    width: 80vw;
-    min-height: 80vh;
-    margin: auto;
-    max-width: var(--max-page-width);
+    width: 100vw;
+    padding: 3em 0;
+    /* min-height: 100vh; */
+    /* margin: auto; */
+    /* max-width: var(--max-page-width); */
     display: flex;
     flex-direction: row;
     justify-content: center;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
+.fullscreen-container {
+    width: 100vw;
+    min-height: 100vh;
+    /* margin: auto; */
+    /* max-width: var(--max-page-width); */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* border: 1px solid black; */
+}
 
 /*
 IIIIIIIIII                         tttt                                              
@@ -151,10 +164,57 @@ I::::::::In::::n    n::::n      tt::::::::::::::tr:::::r            o:::::::::::
 I::::::::In::::n    n::::n        tt:::::::::::ttr:::::r             oo:::::::::::oo 
 IIIIIIIIIInnnnnn    nnnnnn          ttttttttttt  rrrrrrr               ooooooooooo   
 */
+.intro-container {
+    width: 100vw;
+    height: 100vh;
+    /* margin: auto; */
+    /* max-width: var(--max-page-width); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--theme-black);
+    color: var(--theme-white);
+    position: relative;
 
+}
 #intro {
     width: 90%;
     margin: auto;
+}
+
+.intro-backanim {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 40px);
+    top: 0;
+    left:0;
+    filter: blur(40px) brightness(45%);
+    overflow: hidden;
+}
+
+@keyframes intro-backanim-particle-move {
+    0% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+.intro-backanim-particle {
+    --particle-radius: 100px;
+    --particle-color: var(--theme-white);
+    --particle-top: 0px;
+    --particle-left : 0px;
+    --particle-delay: 0s;
+    background-color: var(--particle-color);
+    position: absolute;
+    width: var(--particle-radius);
+    height: var(--particle-radius);
+    top: var(--particle-top);
+    left: var(--particle-left);
+    border-radius: 50%;
+    animation: 10s linear var(--particle-delay) intro-backanim-particle-move infinite;
 }
 .intro-page {
     display: flex;
@@ -168,49 +228,84 @@ IIIIIIIIIInnnnnn    nnnnnn          ttttttttttt  rrrrrrr               ooooooooo
 }
 
 .intro-profilepic {
-    width: 30%;
-    max-width: 200px;
+    width: 40%;
+    max-width: 300px;
     border-radius: 50%;
     
 }
 
 .intro-text1 {
-    font-size: 3rem;
-    text-align: center;
+    font-size: 4rem;
+    /* text-align: center; */
     padding-bottom: 0.5em;
 }
 
 .intro-text2 {
-    font-size: 1.5rem;
-    text-align: center;
-    padding-top: 0.5em;
+    font-size: 1.25rem;
+    /* text-align: center; */
+    /* padding-top: 0.5em; */
+    padding: 0.25em 0;
+}
+.intro-text3 {
+    font-size: 1rem;
+    /* text-align: center; */
+    padding: 0.25em 0;
+}
+.intro-text4 {
+    font-size: 1.25rem;
+    /* text-align: center; */
+    padding: 0.25em 0;
 }
 
+@keyframes growing {
+    0% {
+        transform: scale(1);
+    }
+    
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.intro-arrowcontainer {
+    display: inline-block;
+    padding: 2em;
+    text-align: center;
+    transition: transform 0.5s;
+    animation: growing 1s infinite;
+}
+/* .intro-arrowcontainer:hover {
+    transform: scale(1.1);
+} */
+/* .intro-arrowcontainer:hover .intro-arrow {
+    border-right-color: var(--theme-white);
+    border-bottom-color: var(--theme-white);
+} */
 .intro-arrow {
     --arrow-size: 1rem;
     --arrow-thickness: 0.5rem;
+    margin-right: 1em;
     box-sizing: border-box;
     transform: rotate(45deg);
     border-right: solid var(--theme-gray) var(--arrow-thickness);
     border-bottom: solid var(--theme-gray) var(--arrow-thickness);
     display: inline-block;
     padding: var(--arrow-size);
-    transition: transform 0.5s, border-right-color 0.5s, border-bottom-color 0.5s;
+    transition: border-right-color 0.5s, border-bottom-color 0.5s;
 }
 
-.intro-arrow:hover {
+/* .intro-arrow:hover {
     transform: scale(1.1) rotate(45deg);
-    border-right-color: var(--theme-black);
-    border-bottom-color: var(--theme-black);
+    border-right-color: var(--theme-white);
+    border-bottom-color: var(--theme-white);
     cursor: pointer;
-}
+} */
 .intro-arrowtext{
     text-align: center;
     padding-top: 1em;
-}
-.intro-arrowcontainer {
-    padding-bottom: 1em;
-    text-align: center;
 }
 
 @media screen and (max-width: 600px) {
@@ -221,7 +316,7 @@ IIIIIIIIIInnnnnn    nnnnnn          ttttttttttt  rrrrrrr               ooooooooo
         width: 90%;
     }
     .intro-profilepic {
-        width: 40%;
+        width: 60%;
         margin: 1em 0;
     }
     .intro-textcontainer {
@@ -272,8 +367,18 @@ MMMMMMMM               MMMMMMMM  aaaaaaaaaa  aaaaiiiiiiii nnnnnn    nnnnnn
     display: grid;
     grid-template-columns: auto auto;
     padding: 0.5em 0 ;
-
 }
+
+.main-table-col1 {
+    text-align: end;
+    padding: 0.5em 0.5em 0.5em 0;
+}
+.main-table-col2 {
+    text-align: start;
+    padding: 0.5em 0 0.5em 0.5em;
+    justify-self: middle;
+}
+
 .main-list {
     flex:1;
 
@@ -362,15 +467,6 @@ PPPPPPPPPP           rrrrrrr               ooooooooooo   fffffffff            ii
 .profile-paren {
     text-align: start;
     /* padding: 0 1rem 0 1rem; */
-}
-.profile-col1 {
-    text-align: end;
-    padding: 0.5em 0.5em 0.5em 0;
-}
-.profile-col2 {
-    text-align: start;
-    padding: 0.5em 0 0.5em 0.5em;
-    justify-self: middle;
 }
 .profile-back {
     display: flex;
@@ -905,11 +1001,12 @@ EEEEEEEEEEEEEEEEEEEEEExxxxxxx      xxxxxxx p::::::pppppppp        eeeeeeeeeeeeee
     
     background-color: var(--theme-white);
     border-radius: 1rem;
+    padding: 0.5em 0;
 }
-.experiences-card-top *:not(.experiences-card-icon) {
+/* .experiences-card-top *:not(.experiences-card-icon) {
     opacity: 0;
     transition: opacity 0.5s;
-}
+} */
 .experiences-card:hover .experiences-card-top *:not(.experiences-card-icon) {
     opacity: 1;
 }

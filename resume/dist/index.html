@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Test</title>
   <link rel="stylesheet" href="./index.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
    
 
@@ -12,24 +13,12 @@
 </head>
 <body>
   <!-- Expose elkjs layouter to the index bundle -->
-  <script src="./elkjs.bundle.js" type="application/javascript"></script> 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 
-  <!--  This exports the 'gamemodule.Game' module out -->
-  <script src="./index.bundle.js" type="application/javascript"></script> 
-  <!-- view is for manipulating with overflow hidden for 
-    the DOM node that is supposed to be in the canvass -->
-  <div id="view">  
-    <!-- stage is for containing entire stage in (so moving entire stage 
-      and let the view trim the rest is how camera port is going to wrok) -->
-    <div id="stage">
-      <canvas id="screen" width="400" height="400">
-      </canvas>
-      <input type="button" id="randombutton1" value="Press me"></input>
-    </div>
-  </div>
-
-
-  <script type="application/javascript">
+  <!-- <script type="application/javascript">
     var stageDiv = document.getElementById('stage');
     var visEngine = new visModule.Game({
       stageDiv: stageDiv
@@ -51,44 +40,98 @@
       window.requestAnimationFrame(step);
     }
 
-    // window.requestAnimationFrame(step);
+    window.requestAnimationFrame(step);
     
     
-  </script>
+  </script> -->
 
 
 
   <!-- ์ Do a normal web design here  -->
-  <div class="node-container">
-    <div id="intro">
+  <div class="intro-container">
+    
+    <div class="intro-backanim">
+      <div class="intro-backanim-particle"></div>
+      
+      <div class="intro-backanim-particle" style="--particle-left : 50vw; --particle-delay: -2s;"></div>
+      <div class="intro-backanim-particle" style="--particle-left : 60vw; --particle-delay: -7s;"></div>
+      <div class="intro-backanim-particle" style="--particle-left : 70vw; --particle-delay: -5s;"></div>
+      <div class="intro-backanim-particle" style="--particle-left : 10vw; --particle-delay: -5s;"></div>
+      <div class="intro-backanim-particle" style="--particle-left : 20vw; --particle-delay: -13s;"></div>
+      
+      <div class="intro-backanim-particle" style="--particle-color:var(--theme-blue);--particle-left : 30vw; --particle-delay: -6s;"></div>
+      <div class="intro-backanim-particle" style="--particle-color:var(--theme-blue);--particle-left : 40vw; --particle-delay: -1s;"></div>
+      <div class="intro-backanim-particle" style="--particle-color:var(--theme-blue);--particle-left : 80vw; --particle-delay: -5s;"></div>
+      <div class="intro-backanim-particle" style="--particle-color:var(--theme-blue);--particle-left : 90vw; --particle-delay: -9s;"></div>
+
+      <div class="intro-backanim-particle" style="--particle-color:var(--theme-purple);--particle-left : 30vw; --particle-delay: -9s;"></div>
+      <div class="intro-backanim-particle" style="--particle-color:var(--theme-purple);--particle-left : 90vw; --particle-delay: -4s;"></div>
+      <div class="intro-backanim-particle" style="--particle-color:var(--theme-purple);--particle-left : 50vw; --particle-delay: -3s;"></div>
+      <div class="intro-backanim-particle" style="--particle-color:var(--theme-purple);--particle-left : 80vw; --particle-delay: -8s;"></div>
+      
+      <div class="intro-backanim-particle" style="--particle-color:var(--theme-light-pink);--particle-left : 70vw; --particle-delay: -6s;"></div>
+      <div class="intro-backanim-particle" style="--particle-color:var(--theme-light-pink);--particle-left : 10vw; --particle-delay: -4s;"></div>
+      <div class="intro-backanim-particle" style="--particle-color:var(--theme-light-pink);--particle-left : 90vw; --particle-delay: -1s;"></div>
+      <div class="intro-backanim-particle" style="--particle-color:var(--theme-light-pink);--particle-left : 0vw; --particle-delay: -2s;"></div>
+    </div>
+    <div class="flex-u"></div>
+    <div id="intro" >
       <div class="intro-page">
+
+
         <div class="flex-col intro-textcontainer">
-          <div class="intro-text1">Hello, I'm Boom !!</div>
-          <div class="blue intro-text2">"An aspiring software developer"</div>
+          <div class="intro-text1" 
+              data-aos="fade-right"
+              data-aos-delay="100">
+              Hello, I'm <span class="pink">Boom</span></div>
+          <div class="intro-text2"
+              data-aos="fade-right"
+              data-aos-delay="200">
+              An avid <span class="blue">Learner</span> and</div>
+        <!-- <div class="intro-text3"
+                data-aos="fade-right"
+                data-aos-delay="300">
+          and </div> -->
+          <div class="intro-text4"
+                data-aos="fade-right"
+                data-aos-delay="300">
+                An aspiring <span class="blue">software developer</span></div>
         </div>
-        <img class="intro-profilepic" src="./images/profilePIC.jpg">
+        <img class="intro-profilepic" src="./images/profilePIC.jpg"
+                data-aos="fade-right"
+                data-aos-delay="400">
       </div>
       <!-- <div class="intro-arrowtext">Click or drag to move around</div> -->
-      <div class="intro-arrowcontainer"><div class="intro-arrow"></div></div>
     </div>
+    <div class="flex-u"></div>
+
+    <!-- <div class="intro-arrowcontainer-fade"
+    data-aos="fade-right"
+    data-aos-offset="-100"
+    data-aos-delay="600"
+    style="text-align: center;">
+      <div class="intro-arrowcontainer">
+        <div class="intro-arrow"></div> Learn More
+      </div>
+    </div> -->
   </div>
 
   
   <div class="node-container">
     <div id="main">
-      <h1 class="main-header">Boom</h1>
+      <h1 class="main-header" data-aos="fade-down" data-aos-duration="1000">About Me</h1>
       <div class="main-flex">
-        <div class="main-table">
-          <div class="profile-col1">Name:</div>               <div class="profile-col2"><span class="blue">"Krittamate Tiankanon"</span></div>
-         <div class="profile-col1">Nationality:</div>        <div class="profile-col2"><span class="blue">"Thai"</span></div>
-          <div class="profile-col1">College:</div>            <div class="profile-col2"><span class="blue">"MIT"</span> <span class="gray">/* Massachusetts Institute of Technology */</span></div>
-          <div class="profile-col1">Year:</div>               <div class="profile-col2"><span class="purple">4</span></div>
-          <div class="profile-col1">Major:</div>               <div class="profile-col2"><span class="blue">"Electrical Engineer and Computer Science"</span></div>
-          <div class="profile-col1">  </div>             <div class="profile-col2">  </div>
-          <div class="profile-col1">Courses:</div>             <div class="profile-col2"><div class="main-listitem-arrow"></div></div>
-          <div class="profile-col1">Experiences:</div>     <div class="profile-col2"><div class="main-listitem-arrow"></div></div>
-          <div class="profile-col1">Projects:</div>             <div class="profile-col2"><div class="main-listitem-arrow"></div></div>
-          <div class="profile-col1">Contact:</div>             <div class="profile-col2"><div class="main-listitem-arrow"></div></div>
+        <div class="main-table" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">
+          <div class="main-table-col1" >Name:</div>               <div class="main-table-col2"><span class="blue">"Krittamate Tiankanon"</span></div>
+          <div class="main-table-col1">Nationality:</div>        <div class="main-table-col2"><span class="blue">"Thai"</span></div>
+          <div class="main-table-col1">College:</div>            <div class="main-table-col2"><span class="blue">"MIT"</span> <span class="gray">/* Massachusetts Institute of Technology */</span></div>
+          <div class="main-table-col1">Year:</div>               <div class="main-table-col2"><span class="purple">4</span></div>
+          <div class="main-table-col1">Major:</div>               <div class="main-table-col2"><span class="blue">"Electrical Engineer and Computer Science"</span></div>
+          <!-- <div class="main-table-col1">  </div>             <div class="main-table-col2">  </div>
+          <div class="main-table-col1">Courses:</div>             <div class="main-table-col2"><div class="main-listitem-arrow"></div></div>
+          <div class="main-table-col1">Experiences:</div>     <div class="main-table-col2"><div class="main-listitem-arrow"></div></div>
+          <div class="main-table-col1">Projects:</div>             <div class="main-table-col2"><div class="main-listitem-arrow"></div></div>
+          <div class="main-table-col1">Contact:</div>             <div class="main-table-col2"><div class="main-listitem-arrow"></div></div> -->
         </div>
         <!-- <div class="main-list">
           <div class="main-listitem"><div class="main-listitem-arrow"></div>Profile</div>
@@ -102,9 +145,8 @@
   </div>
 
 
-  <div class="node-container">
+  <!-- <div class="node-container">
     <div id="profile">
-      <!-- <div class="flex-u"></div>  -->
       <div class="profile-container">
         <div id="profile-header">
           <h1> Profile </h1>
@@ -119,39 +161,9 @@
         <div class="profile-paren">}</div>                   <div class="profile-col2"></div>
         <div ></div>
       </div>
-      <!-- <div class="flex-u"></div>  -->
     </div>
-  </div>
+  </div> -->
  
-
-  <div class="node-container">
-    <div id="contact">
-      <div class="contact-header">
-        <h1>Contact</h1>
-        <div class="contact-back">
-          <div class="contact-back-arrow"></div>
-          <span>Back</span>
-        </div>
-      </div>
-      <a href="mailto:krittamate.t@gmail.com" class="blue">
-        <div class="contact-item">
-          <img src="./images/gmail.PNG" class="contact-icon">
-          <span>
-            : <span class="pink">redirect</span>(<span class="blue">"krittamate.t@gmail.com"</span>);
-          </span>
-        </div>
-      </a>
-      <a href="https://www.linkedin.com/in/krittamate-tiankanon-4892b4195/">
-        <div class="contact-item">
-          <img src="./images/linkedin.png" class="contact-icon">
-          <span>
-            : <span class="pink">redirect</span>(<span class="blue">"linkedin.com/in/krittamate-tiankanon-4892b4195"</span>);
-          </span>
-        </div>
-      </a>
-    </div>
-  </div>
-
 
   <div class="node-container">
     <div id="courses">
@@ -451,5 +463,37 @@
       
     </div>
   </div>
+
+
+  
+  <div class="node-container">
+    <div id="contact">
+      <div class="contact-header">
+        <h1>Contact</h1>
+        <div class="contact-back">
+          <div class="contact-back-arrow"></div>
+          <span>Back</span>
+        </div>
+      </div>
+      <a href="mailto:krittamate.t@gmail.com" class="blue">
+        <div class="contact-item">
+          <img src="./images/gmail.PNG" class="contact-icon">
+          <span>
+            : <span class="pink">redirect</span>(<span class="blue">"krittamate.t@gmail.com"</span>);
+          </span>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/krittamate-tiankanon-4892b4195/">
+        <div class="contact-item">
+          <img src="./images/linkedin.png" class="contact-icon">
+          <span>
+            : <span class="pink">redirect</span>(<span class="blue">"linkedin.com/in/krittamate-tiankanon-4892b4195"</span>);
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+
 </body>
 </html>
