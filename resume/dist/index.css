@@ -19,8 +19,8 @@
     
     font-family: var(--theme-font);
     font-size: var(--theme-font-size);
-    color: var(--theme-black);
-    background-color: var(--theme-white);
+    color: var(--theme-white);
+    background-color: var(--theme-black);
 }
 
 @media screen and (max-width: 600px) {
