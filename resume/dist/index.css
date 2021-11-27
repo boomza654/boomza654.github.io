@@ -11,6 +11,8 @@
     --theme-blue: #76abfa;
     --theme-red: #FF0052;
     --theme-brown: #A52626;
+    --theme-orange: #FD971F;
+    --theme-light-orange: #ffdab0;
     --theme-light-pink: #ffbed6;
     --theme-light-red: #ffb9b9;
 
@@ -106,6 +108,9 @@ h3 {
 }
 .brown {
     color: var(--theme-brown);
+}
+.orange {
+    color: var(--theme-orange);
 }
 .light-red {
     color: var(--theme-light-red);
@@ -519,31 +524,24 @@ S:::::::::::::::SS k::::::k   k:::::k i::::::il::::::ll::::::l
 }
 
 .skill-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    align-items: center;
+    justify-items: center;
     padding: 0.5em;
-}
-.skill-bar-container {
-    background-color: var(--theme-gray);
-    width: min(90vw, 400px);
-    min-height: 1rem;
 }
 .skill-item {
     padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
-.skill-bar {
-    background-color: var(--theme-white);
-    transform-origin: left;
-    min-height: 1rem;
-    font-size: 0.75rem;
-    color: var(--theme-black);
-    text-align: right;
-    padding: 0 0.5em;
-}
-
-[data-aos=zoom-in-right-skill] {
-    transform: scale(.6);
+.skill-icon {
+    /* width: 3rem; */
+    height: 3rem;
+    border-radius: 25%;
+    margin-bottom: 0.5em;
 }
 
 
@@ -569,6 +567,7 @@ AAAAAAA                   AAAAAAA cccccccccccccccc          ttttttttttt  iiiiiii
                                                                                                                                                                                     
                                                                                                                                                                                     
 */
+
 #activities {
     width: 90%;
     margin: auto;
@@ -576,198 +575,114 @@ AAAAAAA                   AAAAAAA cccccccccccccccc          ttttttttttt  iiiiiii
 }
 
 .activities-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0.5em 0;
+    padding: 0.5em;
+    text-align: center;
+    font-size: 3rem;
+    background-color: var(--theme-white);
+    color: var(--theme-black);
 }
 
-.activities-back {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    transition: transform 0.5s, color 0.5s;
-    transform-origin: right;
-}
-.activities-back:hover {
-    transform: scale(1.1);
-    color: var(--theme-pink);
-    cursor: pointer;
-}
-.activities-back-arrow {
-    --arrow-size: 0.35rem;
-    --arrow-thickness: 0.25rem;
-    margin: 0 1em;
-    box-sizing: border-box;
-    transform: rotate(-45deg);
-    border-right: solid var(--theme-gray) var(--arrow-thickness);
-    border-bottom: solid var(--theme-gray) var(--arrow-thickness);
-    display: inline-block;
-    padding: var(--arrow-size);
-    transition: transform 0.5s, border-right-color 0.5s, border-bottom-color 0.5s;
-}
-.activities-back:hover .activities-back-arrow{
-    transform: scale(1.1) rotate(-45deg);
-    border-right-color: var(--theme-black);
-    border-bottom-color: var(--theme-black);
-    cursor: pointer;
-}
 
-.activities-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
 .activities-card {
-    background-size: cover;
-    background-position: center;
-    
-    height: 200px;
-    cursor: pointer;
-
-    transition: transform 0.5s, filter 0.5s, box-shadow 0.5s;
-    transform-origin: center;
-    filter: sepia(80%) blur(1px);
-    min-width: 150px;
-    flex: 1;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-.activities-card * {
-    opacity : 0;
-}
-.activities-card:hover {
-    filter : none;
-    transform: scale(1.1);
-    z-index: 9999;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-}
-.activities-card:hover * {
-    transition: opacity 0.5s;
-    opacity: 1;
-}
-
-
-.activities-desc {
-    background-image: linear-gradient( rgba(0,0,0,0),  rgba(0,0,0,0.9) 90%);
-    height: 100px;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
-
-/*
-                                                                                                                                                            
-               AAA                                         tttt            iiii                            iiii          tttt                               
-              A:::A                                     ttt:::t           i::::i                          i::::i      ttt:::t                               
-             A:::::A                                    t:::::t            iiii                            iiii       t:::::t                               
-            A:::::::A                                   t:::::t                                                       t:::::t                               
-           A:::::::::A            ccccccccccccccccttttttt:::::ttttttt    iiiiiiivvvvvvv           vvvvvvviiiiiiittttttt:::::tttttttyyyyyyy           yyyyyyy
-          A:::::A:::::A         cc:::::::::::::::ct:::::::::::::::::t    i:::::i v:::::v         v:::::v i:::::it:::::::::::::::::t y:::::y         y:::::y 
-         A:::::A A:::::A       c:::::::::::::::::ct:::::::::::::::::t     i::::i  v:::::v       v:::::v   i::::it:::::::::::::::::t  y:::::y       y:::::y  
-        A:::::A   A:::::A     c:::::::cccccc:::::ctttttt:::::::tttttt     i::::i   v:::::v     v:::::v    i::::itttttt:::::::tttttt   y:::::y     y:::::y   
-       A:::::A     A:::::A    c::::::c     ccccccc      t:::::t           i::::i    v:::::v   v:::::v     i::::i      t:::::t          y:::::y   y:::::y    
-      A:::::AAAAAAAAA:::::A   c:::::c                   t:::::t           i::::i     v:::::v v:::::v      i::::i      t:::::t           y:::::y y:::::y     
-     A:::::::::::::::::::::A  c:::::c                   t:::::t           i::::i      v:::::v:::::v       i::::i      t:::::t            y:::::y:::::y      
-    A:::::AAAAAAAAAAAAA:::::A c::::::c     ccccccc      t:::::t    tttttt i::::i       v:::::::::v        i::::i      t:::::t    tttttt   y:::::::::y       
-   A:::::A             A:::::Ac:::::::cccccc:::::c      t::::::tttt:::::ti::::::i       v:::::::v        i::::::i     t::::::tttt:::::t    y:::::::y        
-  A:::::A               A:::::Ac:::::::::::::::::c      tt::::::::::::::ti::::::i        v:::::v         i::::::i     tt::::::::::::::t     y:::::y         
- A:::::A                 A:::::Acc:::::::::::::::c        tt:::::::::::tti::::::i         v:::v          i::::::i       tt:::::::::::tt    y:::::y          
-AAAAAAA                   AAAAAAA cccccccccccccccc          ttttttttttt  iiiiiiii          vvv           iiiiiiii         ttttttttttt     y:::::y           
-                                                                                                                                         y:::::y            
-                                                                                                                                        y:::::y             
-                                                                                                                                       y:::::y              
-                                                                                                                                      y:::::y               
-                                                                                                                                     yyyyyyy                
-                                                                                                                                                          
-*/
-
-.activity {
-    width: 90%;
-    margin: auto;
     padding: 0.5em 0;
 }
-
-.activity-image {
-    width: 100%;
-    margin: 0.5em 0;
-    border-radius: 5%;
-    border: dashed 0.5em var(--theme-gray);
-    box-sizing: border-box;
+.activities-card-top-textcontainer1 {
+    text-align: left;
 }
-.activity-header {
+.activities-card-top-textcontainer2 {
+    text-align: right;
+}
+.activities-card-column-container1{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding: 0.5em 0;
-}
-
-.activity-back {
-    display: flex;
+    justify-content: center;
     align-items: center;
-    flex-direction: row;
-    transition: transform 0.5s, color 0.5s;
-    transform-origin: right;
 }
-.activity-back:hover {
-    transform: scale(1.1);
-    color: var(--theme-pink);
-    cursor: pointer;
-}
-.activity-back-arrow {
-    --arrow-size: 0.35rem;
-    --arrow-thickness: 0.25rem;
-    margin: 0 1em;
-    box-sizing: border-box;
-    transform: rotate(-45deg);
-    border-right: solid var(--theme-gray) var(--arrow-thickness);
-    border-bottom: solid var(--theme-gray) var(--arrow-thickness);
-    display: inline-block;
-    padding: var(--arrow-size);
-    transition: transform 0.5s, border-right-color 0.5s, border-bottom-color 0.5s;
-}
-.activity-back:hover .activity-back-arrow{
-    transform: scale(1.1) rotate(-45deg);
-    border-right-color: var(--theme-black);
-    border-bottom-color: var(--theme-black);
-    cursor: pointer;
+.activities-card-column-container2{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
 }
 
-.activity a {
+.activities-card-column {
+
+    width: 50%;
+    padding: 0 0.5em;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+}
+
+.activities-card .activities-card-desc {
+    overflow: hidden;
+    max-height: 0px;
+    transition: max-height 0.5s;
+}
+
+.activities-card:hover .activities-card-desc {
+    max-height: 500px;
+}
+
+@media screen and (max-width: 800px) {
+    .activities-card-top-textcontainer1 {
+        text-align: left;
+    }
+    .activities-card-top-textcontainer2 {
+        text-align: left;
+    }
+    .activities-card-column-container1{
+        flex-direction: column;
+    }
+    .activities-card-column-container2{
+        flex-direction: column;
+    }
+    .activities-card-column {
+        width: 100%;
+    }
+    .activities-card .activities-card-desc {
+        max-height: 500px;
+    }
+}
+.activities-card-desc a {
     text-decoration: none;
 }
-.activity-link span {
+.activities-card-desc-link span {
     transition: color 0.5s;
-    color: var(--theme-black);
+    color: var(--theme-white);
     
 }
-.activity-link:hover .blue {
+.activities-card-desc-link:hover .blue {
     color: var(--theme-blue);
 }
-.activity-link:hover .pink {
+.activities-card-desc-link:hover .pink {
     color: var(--theme-pink);
 }
 
-.activity-link:hover .purple {
+.activities-card-desc-link:hover .purple {
     color: var(--theme-purple);
 }
-.activity-link {
+.activities-card-desc-link:hover .orange {
+    color: var(--theme-orange);
+}
+.activities-card-desc-link {
     
     transition: transform 0.5s, backdrop-filter 0.5s;
     transform-origin: center;
-    text-align: center;
-    color: var(--theme-black);
+    padding: 0 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    /* text-align: center; */
+    color: var(--theme-white);
     
 }
-.activity-link:hover {
+.activities-card-desc-link:hover {
     transform: scale(1.1);
 }
 
-.activity-link-arrow {
+.activities-card-desc-link-arrow {
     --arrow-size: 0.35rem;
     --arrow-thickness: 0.25rem;
     margin: 0 1em;
@@ -779,10 +694,21 @@ AAAAAAA                   AAAAAAA cccccccccccccccc          ttttttttttt  iiiiiii
     padding: var(--arrow-size);
     transition: transform 0.5s, border-right-color 0.5s, border-bottom-color 0.5s;
 }
-.activity-link:hover .activity-link-arrow{
+.activities-card-desc-link:hover .activities-card-desc-link-arrow{
     transform: scale(1.1) rotate(-45deg);
-    border-right-color: var(--theme-black);
-    border-bottom-color: var(--theme-black);
+    border-right-color: var(--theme-white);
+    border-bottom-color: var(--theme-white);
+}
+
+.activities-card-image-center {
+    text-align: center;
+    margin: 0.5em 0;
+}
+.activities-card-image {
+    width: 90%;
+    border-radius: 5%;
+    border: dashed 0.5em var(--theme-gray);
+    box-sizing: border-box;
 }
 
 /*
@@ -820,42 +746,14 @@ EEEEEEEEEEEEEEEEEEEEEExxxxxxx      xxxxxxx p::::::pppppppp        eeeeeeeeeeeeee
 }
 
 .experiences-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0.5em 0;
+    font-size: 3rem;
+    text-align: center;
+    padding: 0.5em;
+    
+    background-color: var(--theme-light-red);
+    color: var(--theme-black);
 }
 
-.experiences-back {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    transition: transform 0.5s, color 0.5s;
-    transform-origin: right;
-}
-.experiences-back:hover {
-    transform: scale(1.1);
-    color: var(--theme-pink);
-    cursor: pointer;
-}
-.experiences-back-arrow {
-    --arrow-size: 0.35rem;
-    --arrow-thickness: 0.25rem;
-    margin: 0 1em;
-    box-sizing: border-box;
-    transform: rotate(-45deg);
-    border-right: solid var(--theme-gray) var(--arrow-thickness);
-    border-bottom: solid var(--theme-gray) var(--arrow-thickness);
-    display: inline-block;
-    padding: var(--arrow-size);
-    transition: transform 0.5s, border-right-color 0.5s, border-bottom-color 0.5s;
-}
-.experiences-back:hover .experiences-back-arrow{
-    transform: scale(1.1) rotate(-45deg);
-    border-right-color: var(--theme-black);
-    border-bottom-color: var(--theme-black);
-    cursor: pointer;
-}
 
 .experiences-card-top {
     display: flex;
@@ -932,9 +830,12 @@ C:::::C              o::::o     o::::o  n::::n    n::::n      t:::::t           
     margin: auto;
 }
 .contact-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    font-size: 3rem;
+    text-align: center;
+    padding: 0.5em;
+    
+    background-color: var(--theme-light-orange);
+    color: var(--theme-black);
 }
 .contact-item {
     display: flex;
