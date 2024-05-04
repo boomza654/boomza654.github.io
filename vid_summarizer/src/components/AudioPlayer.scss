@@ -1,0 +1,20 @@
+@import "../utils.scss";
+
+.player {
+    width : 100%;
+    border-radius: $m;
+    transition: filter 0.3s;
+    &:hover {
+        filter: brightness(105%);
+    }
+
+    &:focus  {
+        outline: none;
+    }
+
+    &:active {
+        filter: brightness(95%);
+    }
+}
+
+

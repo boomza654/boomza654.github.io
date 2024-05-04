@@ -1,0 +1,122 @@
+
+@import "./utils.scss";
+@import 'https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap';
+
+:root {
+
+  
+
+  font-size: 16px;
+  font-family: QuickSand, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  // font-weight: 400;
+
+  /* color-scheme: light dark; */
+  // color: var(--theme-white);
+  // background-color: var(--theme-light-gray);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+
+
+
+body {
+  // background-color: $black;
+  // color : $light-gray;
+  color : $black;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  // width: 100vw;
+}
+
+
+
+.title {
+
+  font-weight: normal;
+  text-align: center;
+  background-color: $light-blue;
+  // color: white;
+  font-size: 3rem;
+  padding: 1.5rem 0;
+}
+
+#root {
+  width: 100%;
+  // max-width: 800px;
+  // margin: $m;
+}
+
+.form-container {
+  border-radius: $m;
+  // max-width: 800px;
+  background-color: transparent;
+  width: 90%;
+  // border :none;
+  border:  2px dashed $gray;
+}
+
+.general-loading-bar-continer {
+  background-color: lightgrey;
+  flex-direction: column;
+  align-items: center;
+  border-radius: $m;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.form-textarea {
+  display: block;
+  resize: none;
+  width: calc(100% - $m);
+  min-height: 200px;
+  border-radius: $m;
+  border: dashed $gray 1px;
+}
+
+
+textarea {
+  background-color: transparent;
+  font-family: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: $s;
+  padding: $m;
+  color: $dark-gray;
+
+  transition: filter 0.3s;
+
+  &:hover {
+      filter: brightness(105%);
+  }
+
+  &:active {
+      filter: brightness(95%);
+  }
+  
+  &:disabled {
+    filter: brightness(95%);
+  }
+}
+
+.error-text{
+  border-radius: $s;
+  padding: $m;
+  font-weight: bold;
+  border: 1px solid $red;
+  background-color: $light-red;
+}
