@@ -1,0 +1,908 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+:root {
+    --theme-black: #272822;
+    --theme-light-gray: #dadada;
+    --theme-gray: #a5a4a4;
+    --theme-dark-gray: #4b4a4a;
+    --theme-white: #ebebeb;
+    --theme-purple: #AE81FF;
+    --theme-pink: #F92672;
+    --theme-blue: #76abfa;
+    --theme-red: #FF0052;
+    --theme-brown: #A52626;
+    --theme-orange: #FD971F;
+    --theme-light-orange: #ffdab0;
+    --theme-light-pink: #ffbed6;
+    --theme-light-red: #ffb9b9;
+
+    --theme-font: "Quicksand";
+    --theme-font-size: 18px;
+
+    --max-page-width: 980px;
+    
+    font-family: var(--theme-font);
+    font-size: var(--theme-font-size);
+    color: var(--theme-white);
+    background-color: var(--theme-black);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media screen and (max-width: 600px) {
+    :root {
+
+        --theme-font-size: 14px;
+        font-size: var(--theme-font-size);
+
+    }
+}
+@media screen and (min-width: 800px) {
+    :root {
+
+        --theme-font-size: 20px;
+        font-size: var(--theme-font-size);
+
+    }
+}
+
+body {
+    padding: 0px; 
+    margin: 0px; 
+    width: 100vw;
+    height: 100vh;
+}
+h1 {
+    font-weight: normal;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
+h2 {
+    font-weight: normal;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
+h3 {
+    font-weight: normal;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+.flex-u {
+    flex: 1
+}
+.pad-1 {
+    padding: 1em;
+}
+.gray {
+    color: var(--theme-gray);
+}
+.pink {
+    color: var(--theme-pink);
+}
+.purple {
+    color: var(--theme-purple);
+}
+.white {
+    color: var(--theme-white)
+}
+.blue {
+    color: var(--theme-blue);
+}
+.black {
+    color: var(--theme-black);
+}
+.red {
+    color: var(--theme-red);
+}
+.brown {
+    color: var(--theme-brown);
+}
+.orange {
+    color: var(--theme-orange);
+}
+.light-red {
+    color: var(--theme-light-red);
+}
+.light-pink {
+    color: var(--theme-light-pink);
+}
+.light-gray {
+    color: var(--theme-light-gray);
+}
+.text-center {
+    text-align: center;
+}
+
+
+
+/* View for stuff */
+#view {
+    display: none;
+    border: 1px solid black;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative; /* to have DOM element inside able to do position abosulte*/
+}
+#randombutton1 {
+    position: absolute;
+    top: 50px;
+    left: -20px;
+}
+
+/* Node container */
+.node-container {
+    width: 100vw;
+    padding: 3em 0;
+    /* min-height: 100vh; */
+    /* margin: auto; */
+    /* max-width: var(--max-page-width); */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* border: 1px solid black; */
+}
+
+.fullscreen-container {
+    width: 100vw;
+    min-height: 100vh;
+    /* margin: auto; */
+    /* max-width: var(--max-page-width); */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* border: 1px solid black; */
+}
+
+/*
+IIIIIIIIII                         tttt                                              
+I::::::::I                      ttt:::t                                              
+I::::::::I                      t:::::t                                              
+II::::::II                      t:::::t                                              
+  I::::Innnn  nnnnnnnn    ttttttt:::::ttttttt   rrrrr   rrrrrrrrr      ooooooooooo   
+  I::::In:::nn::::::::nn  t:::::::::::::::::t   r::::rrr:::::::::r   oo:::::::::::oo 
+  I::::In::::::::::::::nn t:::::::::::::::::t   r:::::::::::::::::r o:::::::::::::::o
+  I::::Inn:::::::::::::::ntttttt:::::::tttttt   rr::::::rrrrr::::::ro:::::ooooo:::::o
+  I::::I  n:::::nnnn:::::n      t:::::t          r:::::r     r:::::ro::::o     o::::o
+  I::::I  n::::n    n::::n      t:::::t          r:::::r     rrrrrrro::::o     o::::o
+  I::::I  n::::n    n::::n      t:::::t          r:::::r            o::::o     o::::o
+  I::::I  n::::n    n::::n      t:::::t    ttttttr:::::r            o::::o     o::::o
+II::::::IIn::::n    n::::n      t::::::tttt:::::tr:::::r            o:::::ooooo:::::o
+I::::::::In::::n    n::::n      tt::::::::::::::tr:::::r            o:::::::::::::::o
+I::::::::In::::n    n::::n        tt:::::::::::ttr:::::r             oo:::::::::::oo 
+IIIIIIIIIInnnnnn    nnnnnn          ttttttttttt  rrrrrrr               ooooooooooo   
+*/
+.intro-container {
+    width: 100vw;
+    height: 100vh;
+    /* margin: auto; */
+    /* max-width: var(--max-page-width); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--theme-black);
+    color: var(--theme-white);
+    position: relative;
+
+}
+#intro {
+    width: 90%;
+    margin: auto;
+}
+
+.intro-backanim {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 40px);
+    top: 0;
+    left:0;
+    filter: blur(40px) brightness(45%);
+    overflow: hidden;
+}
+
+@keyframes intro-backanim-particle-move {
+    0% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+.intro-backanim-particle {
+    --particle-radius: 100px;
+    --particle-color: var(--theme-white);
+    --particle-top: 0px;
+    --particle-left : 0px;
+    --particle-delay: 0s;
+    background-color: var(--particle-color);
+    position: absolute;
+    width: var(--particle-radius);
+    height: var(--particle-radius);
+    top: var(--particle-top);
+    left: var(--particle-left);
+    border-radius: 50%;
+    animation: 10s linear var(--particle-delay) intro-backanim-particle-move infinite;
+}
+.intro-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.intro-textcontainer {
+    max-width: calc(var(--max-page-width) - 200px);
+}
+
+.intro-profilepic {
+    width: 40%;
+    max-width: 300px;
+    border-radius: 50%;
+    
+}
+
+.intro-text1 {
+    font-size: 4rem;
+    /* text-align: center; */
+    padding-bottom: 0.5em;
+}
+
+.intro-text2 {
+    font-size: 1.25rem;
+    /* text-align: center; */
+    /* padding-top: 0.5em; */
+    padding: 0.25em 0;
+}
+.intro-text3 {
+    font-size: 1rem;
+    /* text-align: center; */
+    padding: 0.25em 0;
+}
+.intro-text4 {
+    font-size: 1.25rem;
+    /* text-align: center; */
+    padding: 0.25em 0;
+}
+
+.intro-arrowcontainer {
+    display: inline-block;
+    padding: 2em;
+    text-align: center;
+    transition: transform 0.5s;
+    text-align: center;
+    /* animation: growing 1s infinite; */
+}
+.intro-arrowcontainer:hover {
+    transform: scale(1.1);
+}
+.intro-arrowcontainer:hover .intro-arrow {
+    border-right-color: var(--theme-white);
+    border-bottom-color: var(--theme-white);
+}
+.intro-arrowcontainer a {
+    text-decoration: none;
+    color: inherit;
+}
+.intro-arrow {
+    --arrow-size: 1rem;
+    --arrow-thickness: 0.5rem;
+    margin-right: 1em;
+    box-sizing: border-box;
+    transform: rotate(45deg);
+    border-right: solid var(--theme-gray) var(--arrow-thickness);
+    border-bottom: solid var(--theme-gray) var(--arrow-thickness);
+    display: inline-block;
+    padding: var(--arrow-size);
+    transition: border-right-color 0.5s, border-bottom-color 0.5s;
+}
+
+/* .intro-arrow:hover {
+    transform: scale(1.1) rotate(45deg);
+    border-right-color: var(--theme-white);
+    border-bottom-color: var(--theme-white);
+    cursor: pointer;
+} */
+.intro-arrowtext{
+    text-align: center;
+    padding-top: 1em;
+}
+
+@media screen and (max-width: 600px) {
+    .intro-page {
+        flex-direction: column;
+    }
+    .intro-textcontainer {
+        width: 90%;
+    }
+    .intro-profilepic {
+        width: 60%;
+        margin: 1em 0;
+    }
+    .intro-textcontainer {
+        margin: 1em 0;
+    }
+}
+
+
+/*
+                                                                          
+                                                                          
+MMMMMMMM               MMMMMMMM                    iiii                   
+M:::::::M             M:::::::M                   i::::i                  
+M::::::::M           M::::::::M                    iiii                   
+M:::::::::M         M:::::::::M                                           
+M::::::::::M       M::::::::::M  aaaaaaaaaaaaa   iiiiiiinnnn  nnnnnnnn    
+M:::::::::::M     M:::::::::::M  a::::::::::::a  i:::::in:::nn::::::::nn  
+M:::::::M::::M   M::::M:::::::M  aaaaaaaaa:::::a  i::::in::::::::::::::nn 
+M::::::M M::::M M::::M M::::::M           a::::a  i::::inn:::::::::::::::n
+M::::::M  M::::M::::M  M::::::M    aaaaaaa:::::a  i::::i  n:::::nnnn:::::n
+M::::::M   M:::::::M   M::::::M  aa::::::::::::a  i::::i  n::::n    n::::n
+M::::::M    M:::::M    M::::::M a::::aaaa::::::a  i::::i  n::::n    n::::n
+M::::::M     MMMMM     M::::::Ma::::a    a:::::a  i::::i  n::::n    n::::n
+M::::::M               M::::::Ma::::a    a:::::a i::::::i n::::n    n::::n
+M::::::M               M::::::Ma:::::aaaa::::::a i::::::i n::::n    n::::n
+M::::::M               M::::::M a::::::::::aa:::ai::::::i n::::n    n::::n
+MMMMMMMM               MMMMMMMM  aaaaaaaaaa  aaaaiiiiiiii nnnnnn    nnnnnn
+*/
+
+
+.main-container {
+    width: 100vw;
+    padding: 3em 0;
+    /* min-height: 100vh; */
+    /* margin: auto; */
+    /* max-width: var(--max-page-width); */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* align-items: flex-start; */
+    /* border: 1px solid black; */
+}
+
+@media screen and (max-width: 1000px) {
+    .main-container {
+        flex-direction: column;
+    }
+}
+
+/*
+                                                                                                            
+                                bbbbbbbb                                                                    
+               AAA              b::::::b                                                      tttt          
+              A:::A             b::::::b                                                   ttt:::t          
+             A:::::A            b::::::b                                                   t:::::t          
+            A:::::::A            b:::::b                                                   t:::::t          
+           A:::::::::A           b:::::bbbbbbbbb       ooooooooooo   uuuuuu    uuuuuuttttttt:::::ttttttt    
+          A:::::A:::::A          b::::::::::::::bb   oo:::::::::::oo u::::u    u::::ut:::::::::::::::::t    
+         A:::::A A:::::A         b::::::::::::::::b o:::::::::::::::ou::::u    u::::ut:::::::::::::::::t    
+        A:::::A   A:::::A        b:::::bbbbb:::::::bo:::::ooooo:::::ou::::u    u::::utttttt:::::::tttttt    
+       A:::::A     A:::::A       b:::::b    b::::::bo::::o     o::::ou::::u    u::::u      t:::::t          
+      A:::::AAAAAAAAA:::::A      b:::::b     b:::::bo::::o     o::::ou::::u    u::::u      t:::::t          
+     A:::::::::::::::::::::A     b:::::b     b:::::bo::::o     o::::ou::::u    u::::u      t:::::t          
+    A:::::AAAAAAAAAAAAA:::::A    b:::::b     b:::::bo::::o     o::::ou:::::uuuu:::::u      t:::::t    tttttt
+   A:::::A             A:::::A   b:::::bbbbbb::::::bo:::::ooooo:::::ou:::::::::::::::uu    t::::::tttt:::::t
+  A:::::A               A:::::A  b::::::::::::::::b o:::::::::::::::o u:::::::::::::::u    tt::::::::::::::t
+ A:::::A                 A:::::A b:::::::::::::::b   oo:::::::::::oo   uu::::::::uu:::u      tt:::::::::::tt
+AAAAAAA                   AAAAAAAbbbbbbbbbbbbbbbb      ooooooooooo       uuuuuuuu  uuuu        ttttttttttt  
+                                                                                                            
+*/
+#about {
+    padding: 0.5em;
+    /* margin: auto; */
+    flex:1;
+}
+.about-flex {
+    display:flex;
+    flex-direction: row;
+}
+.about-header {
+    padding: 0.5em;
+    text-align: center;
+    font-size: 3rem;
+    /* color: var(--theme-pink); */
+}
+.about-table {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    padding: 1em ;
+}
+
+.about-table-col1 {
+    text-align: end;
+    padding: 0.5em 0.5em 0.5em 0;
+}
+.about-table-col2 {
+    text-align: start;
+    padding: 0.5em 0 0.5em 0.5em;
+    justify-self: middle;
+}
+
+
+/*
+        CCCCCCCCCCCCC                                                                                                            
+     CCC::::::::::::C                                                                                                            
+   CC:::::::::::::::C                                                                                                            
+  C:::::CCCCCCCC::::C                                                                                                            
+ C:::::C       CCCCCC   ooooooooooo   uuuuuu    uuuuuu rrrrr   rrrrrrrrr       ssssssssss       eeeeeeeeeeee        ssssssssss   
+C:::::C               oo:::::::::::oo u::::u    u::::u r::::rrr:::::::::r    ss::::::::::s    ee::::::::::::ee    ss::::::::::s  
+C:::::C              o:::::::::::::::ou::::u    u::::u r:::::::::::::::::r ss:::::::::::::s  e::::::eeeee:::::eess:::::::::::::s 
+C:::::C              o:::::ooooo:::::ou::::u    u::::u rr::::::rrrrr::::::rs::::::ssss:::::se::::::e     e:::::es::::::ssss:::::s
+C:::::C              o::::o     o::::ou::::u    u::::u  r:::::r     r:::::r s:::::s  ssssss e:::::::eeeee::::::e s:::::s  ssssss 
+C:::::C              o::::o     o::::ou::::u    u::::u  r:::::r     rrrrrrr   s::::::s      e:::::::::::::::::e    s::::::s      
+C:::::C              o::::o     o::::ou::::u    u::::u  r:::::r                  s::::::s   e::::::eeeeeeeeeee        s::::::s   
+ C:::::C       CCCCCCo::::o     o::::ou:::::uuuu:::::u  r:::::r            ssssss   s:::::s e:::::::e           ssssss   s:::::s 
+  C:::::CCCCCCCC::::Co:::::ooooo:::::ou:::::::::::::::uur:::::r            s:::::ssss::::::se::::::::e          s:::::ssss::::::s
+   CC:::::::::::::::Co:::::::::::::::o u:::::::::::::::ur:::::r            s::::::::::::::s  e::::::::eeeeeeee  s::::::::::::::s 
+     CCC::::::::::::C oo:::::::::::oo   uu::::::::uu:::ur:::::r             s:::::::::::ss    ee:::::::::::::e   s:::::::::::ss  
+        CCCCCCCCCCCCC   ooooooooooo       uuuuuuuu  uuuurrrrrrr              sssssssssss        eeeeeeeeeeeeee    sssssssssss    
+*/
+#courses {
+    flex: 1;
+    /* width: 90%; */
+    /* margin: auto; */
+    padding: 0.5em;
+}
+
+.courses-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0.5em;
+}
+
+
+
+.courses-header {
+    
+    padding: 0.5em;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.courses-container-item {
+    padding: 0.25em 0;
+    color: var(--theme-blue);
+    /* transform-origin: left; */
+    transition: color 0.25s;
+}
+
+.courses-container-item:hover {
+    color: var(--theme-white);
+    /* transform: scale(1.1); */
+}
+/*
+                                                              
+                                                              
+   SSSSSSSSSSSSSSS kkkkkkkk             iiii  lllllll lllllll 
+ SS:::::::::::::::Sk::::::k            i::::i l:::::l l:::::l 
+S:::::SSSSSS::::::Sk::::::k             iiii  l:::::l l:::::l 
+S:::::S     SSSSSSSk::::::k                   l:::::l l:::::l 
+S:::::S             k:::::k    kkkkkkkiiiiiii  l::::l  l::::l 
+S:::::S             k:::::k   k:::::k i:::::i  l::::l  l::::l 
+ S::::SSSS          k:::::k  k:::::k   i::::i  l::::l  l::::l 
+  SS::::::SSSSS     k:::::k k:::::k    i::::i  l::::l  l::::l 
+    SSS::::::::SS   k::::::k:::::k     i::::i  l::::l  l::::l 
+       SSSSSS::::S  k:::::::::::k      i::::i  l::::l  l::::l 
+            S:::::S k:::::::::::k      i::::i  l::::l  l::::l 
+            S:::::S k::::::k:::::k     i::::i  l::::l  l::::l 
+SSSSSSS     S:::::Sk::::::k k:::::k   i::::::il::::::ll::::::l
+S::::::SSSSSS:::::Sk::::::k  k:::::k  i::::::il::::::ll::::::l
+S:::::::::::::::SS k::::::k   k:::::k i::::::il::::::ll::::::l
+ SSSSSSSSSSSSSSS   kkkkkkkk    kkkkkkkiiiiiiiillllllllllllllll
+                                                              
+*/
+
+#skill {
+    flex:1;
+    padding: 0.5em;
+    /* margin: auto; */
+    flex:1;
+}
+.skill-header{
+    padding: 0.5em;
+    text-align: center;
+    font-size: 3rem;
+}
+.skill-subheader {
+    
+    padding: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.skill-container {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    align-items: center;
+    justify-items: center;
+    padding: 0.5em;
+}
+.skill-item {
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.skill-icon {
+    /* width: 3rem; */
+    height: 3rem;
+    border-radius: 25%;
+    margin-bottom: 0.5em;
+}
+
+.skill-icon-square {
+    /* width: 3rem; */
+    height: 3rem;
+    margin-bottom: 0.5em;
+}
+
+
+/*
+                                                                                                                                                                                    
+                                                                                                                                                                                    
+               AAA                                         tttt            iiii                            iiii          tttt            iiii                                       
+              A:::A                                     ttt:::t           i::::i                          i::::i      ttt:::t           i::::i                                      
+             A:::::A                                    t:::::t            iiii                            iiii       t:::::t            iiii                                       
+            A:::::::A                                   t:::::t                                                       t:::::t                                                       
+           A:::::::::A            ccccccccccccccccttttttt:::::ttttttt    iiiiiiivvvvvvv           vvvvvvviiiiiiittttttt:::::ttttttt    iiiiiii     eeeeeeeeeeee        ssssssssss   
+          A:::::A:::::A         cc:::::::::::::::ct:::::::::::::::::t    i:::::i v:::::v         v:::::v i:::::it:::::::::::::::::t    i:::::i   ee::::::::::::ee    ss::::::::::s  
+         A:::::A A:::::A       c:::::::::::::::::ct:::::::::::::::::t     i::::i  v:::::v       v:::::v   i::::it:::::::::::::::::t     i::::i  e::::::eeeee:::::eess:::::::::::::s 
+        A:::::A   A:::::A     c:::::::cccccc:::::ctttttt:::::::tttttt     i::::i   v:::::v     v:::::v    i::::itttttt:::::::tttttt     i::::i e::::::e     e:::::es::::::ssss:::::s
+       A:::::A     A:::::A    c::::::c     ccccccc      t:::::t           i::::i    v:::::v   v:::::v     i::::i      t:::::t           i::::i e:::::::eeeee::::::e s:::::s  ssssss 
+      A:::::AAAAAAAAA:::::A   c:::::c                   t:::::t           i::::i     v:::::v v:::::v      i::::i      t:::::t           i::::i e:::::::::::::::::e    s::::::s      
+     A:::::::::::::::::::::A  c:::::c                   t:::::t           i::::i      v:::::v:::::v       i::::i      t:::::t           i::::i e::::::eeeeeeeeeee        s::::::s   
+    A:::::AAAAAAAAAAAAA:::::A c::::::c     ccccccc      t:::::t    tttttt i::::i       v:::::::::v        i::::i      t:::::t    tttttt i::::i e:::::::e           ssssss   s:::::s 
+   A:::::A             A:::::Ac:::::::cccccc:::::c      t::::::tttt:::::ti::::::i       v:::::::v        i::::::i     t::::::tttt:::::ti::::::ie::::::::e          s:::::ssss::::::s
+  A:::::A               A:::::Ac:::::::::::::::::c      tt::::::::::::::ti::::::i        v:::::v         i::::::i     tt::::::::::::::ti::::::i e::::::::eeeeeeee  s::::::::::::::s 
+ A:::::A                 A:::::Acc:::::::::::::::c        tt:::::::::::tti::::::i         v:::v          i::::::i       tt:::::::::::tti::::::i  ee:::::::::::::e   s:::::::::::ss  
+AAAAAAA                   AAAAAAA cccccccccccccccc          ttttttttttt  iiiiiiii          vvv           iiiiiiii         ttttttttttt  iiiiiiii    eeeeeeeeeeeeee    sssssssssss    
+                                                                                                                                                                                    
+                                                                                                                                                                                    
+*/
+
+#activities {
+    width: 90%;
+    margin: auto;
+    padding: 0.5em 0;
+}
+
+.activities-header {
+    padding: 0.5em;
+    text-align: center;
+    font-size: 3rem;
+    background-color: var(--theme-white);
+    color: var(--theme-black);
+}
+
+
+.activities-card {
+    padding: 0.5em 0;
+}
+.activities-card-top-textcontainer1 {
+    text-align: left;
+}
+.activities-card-top-textcontainer2 {
+    text-align: right;
+}
+.activities-card-column-container1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.activities-card-column-container2{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.activities-card-column {
+
+    width: 50%;
+    padding: 0 0.5em;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+}
+
+.activities-card .activities-card-desc {
+    overflow: hidden;
+    max-height: 0px;
+    transition: max-height 0.5s;
+}
+
+.activities-card:hover .activities-card-desc {
+    max-height: 500px;
+}
+
+@media screen and (max-width: 800px) {
+    .activities-card-top-textcontainer1 {
+        text-align: left;
+    }
+    .activities-card-top-textcontainer2 {
+        text-align: left;
+    }
+    .activities-card-column-container1{
+        flex-direction: column;
+    }
+    .activities-card-column-container2{
+        flex-direction: column;
+    }
+    .activities-card-column {
+        width: 100%;
+    }
+    .activities-card .activities-card-desc {
+        max-height: 500px;
+    }
+}
+.activities-card-desc a {
+    text-decoration: none;
+}
+.activities-card-desc-link span {
+    transition: color 0.5s;
+    color: var(--theme-white);
+    
+}
+.activities-card-desc-link:hover .blue {
+    color: var(--theme-blue);
+}
+.activities-card-desc-link:hover .pink {
+    color: var(--theme-pink);
+}
+
+.activities-card-desc-link:hover .purple {
+    color: var(--theme-purple);
+}
+.activities-card-desc-link:hover .orange {
+    color: var(--theme-orange);
+}
+.activities-card-desc-link {
+    
+    transition: transform 0.5s, backdrop-filter 0.5s;
+    transform-origin: center;
+    padding: 0 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    /* text-align: center; */
+    color: var(--theme-white);
+    
+}
+.activities-card-desc-link:hover {
+    transform: scale(1.1);
+}
+
+.activities-card-desc-link-arrow {
+    --arrow-size: 0.35rem;
+    --arrow-thickness: 0.25rem;
+    margin: 0 1em;
+    box-sizing: border-box;
+    transform: rotate(-45deg);
+    border-right: solid var(--theme-gray) var(--arrow-thickness);
+    border-bottom: solid var(--theme-gray) var(--arrow-thickness);
+    display: inline-block;
+    padding: var(--arrow-size);
+    transition: transform 0.5s, border-right-color 0.5s, border-bottom-color 0.5s;
+}
+.activities-card-desc-link:hover .activities-card-desc-link-arrow{
+    transform: scale(1.1) rotate(-45deg);
+    border-right-color: var(--theme-white);
+    border-bottom-color: var(--theme-white);
+}
+
+.activities-card-image-center {
+    text-align: center;
+    margin: 0.5em 0;
+}
+.activities-card-image {
+    width: 90%;
+    border-radius: 5%;
+    border: dashed 0.5em var(--theme-gray);
+    box-sizing: border-box;
+}
+
+/*
+                                                                                                                                                                                           
+                                                                                                                                                                                           
+EEEEEEEEEEEEEEEEEEEEEE                                                                                 iiii                                                                                
+E::::::::::::::::::::E                                                                                i::::i                                                                               
+E::::::::::::::::::::E                                                                                 iiii                                                                                
+EE::::::EEEEEEEEE::::E                                                                                                                                                                     
+  E:::::E       EEEEEExxxxxxx      xxxxxxxppppp   ppppppppp       eeeeeeeeeeee    rrrrr   rrrrrrrrr  iiiiiii     eeeeeeeeeeee    nnnn  nnnnnnnn        cccccccccccccccc    eeeeeeeeeeee    
+  E:::::E              x:::::x    x:::::x p::::ppp:::::::::p    ee::::::::::::ee  r::::rrr:::::::::r i:::::i   ee::::::::::::ee  n:::nn::::::::nn    cc:::::::::::::::c  ee::::::::::::ee  
+  E::::::EEEEEEEEEE     x:::::x  x:::::x  p:::::::::::::::::p  e::::::eeeee:::::eer:::::::::::::::::r i::::i  e::::::eeeee:::::een::::::::::::::nn  c:::::::::::::::::c e::::::eeeee:::::ee
+  E:::::::::::::::E      x:::::xx:::::x   pp::::::ppppp::::::pe::::::e     e:::::err::::::rrrrr::::::ri::::i e::::::e     e:::::enn:::::::::::::::nc:::::::cccccc:::::ce::::::e     e:::::e
+  E:::::::::::::::E       x::::::::::x     p:::::p     p:::::pe:::::::eeeee::::::e r:::::r     r:::::ri::::i e:::::::eeeee::::::e  n:::::nnnn:::::nc::::::c     ccccccce:::::::eeeee::::::e
+  E::::::EEEEEEEEEE        x::::::::x      p:::::p     p:::::pe:::::::::::::::::e  r:::::r     rrrrrrri::::i e:::::::::::::::::e   n::::n    n::::nc:::::c             e:::::::::::::::::e 
+  E:::::E                  x::::::::x      p:::::p     p:::::pe::::::eeeeeeeeeee   r:::::r            i::::i e::::::eeeeeeeeeee    n::::n    n::::nc:::::c             e::::::eeeeeeeeeee  
+  E:::::E       EEEEEE    x::::::::::x     p:::::p    p::::::pe:::::::e            r:::::r            i::::i e:::::::e             n::::n    n::::nc::::::c     ccccccce:::::::e           
+EE::::::EEEEEEEE:::::E   x:::::xx:::::x    p:::::ppppp:::::::pe::::::::e           r:::::r           i::::::ie::::::::e            n::::n    n::::nc:::::::cccccc:::::ce::::::::e          
+E::::::::::::::::::::E  x:::::x  x:::::x   p::::::::::::::::p  e::::::::eeeeeeee   r:::::r           i::::::i e::::::::eeeeeeee    n::::n    n::::n c:::::::::::::::::c e::::::::eeeeeeee  
+E::::::::::::::::::::E x:::::x    x:::::x  p::::::::::::::pp    ee:::::::::::::e   r:::::r           i::::::i  ee:::::::::::::e    n::::n    n::::n  cc:::::::::::::::c  ee:::::::::::::e  
+EEEEEEEEEEEEEEEEEEEEEExxxxxxx      xxxxxxx p::::::pppppppp        eeeeeeeeeeeeee   rrrrrrr           iiiiiiii    eeeeeeeeeeeeee    nnnnnn    nnnnnn    cccccccccccccccc    eeeeeeeeeeeeee  
+                                           p:::::p                                                                                                                                         
+                                           p:::::p                                                                                                                                         
+                                          p:::::::p                                                                                                                                        
+                                          p:::::::p                                                                                                                                        
+                                          p:::::::p                                                                                                                                        
+                                          ppppppppp                                                                                                                                        
+                                                                                                                                                                                           
+*/
+
+#experiences {
+    width: 90%;
+    margin: auto;
+    padding: 0.5em 0;
+}
+
+.experiences-header {
+    font-size: 3rem;
+    text-align: center;
+    padding: 0.5em;
+    
+    background-color: var(--theme-light-red);
+    color: var(--theme-black);
+}
+
+
+.experiences-card-top {
+    display: flex;
+    flex-direction:  row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.experiences-card-icon {
+    min-width: 3rem;
+    min-height: 3rem;
+    width: 3rem;
+    height: 3rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    border-radius: 20%;
+    margin: 0.5em;
+}
+.experience-card-top-textcontainer {
+    display: flex;
+    flex-direction: column;
+}
+.experiences-card-top {
+    
+    /* background-color: var(--theme-white); */
+    border-radius: 1rem;
+    padding: 0.5em 0;
+}
+/* .experiences-card-top *:not(.experiences-card-icon) {
+    opacity: 0;
+    transition: opacity 0.5s;
+} */
+.experiences-card:hover .experiences-card-top *:not(.experiences-card-icon) {
+    opacity: 1;
+}
+
+.experiences-card-desc {
+    overflow: hidden;
+    max-height: 0px;
+    transition: max-height 0.5s;
+    padding: 0 0.5em;
+}
+.experiences-card-desc p {
+    margin: 0.5em 0;
+}
+
+.experiences-card:hover .experiences-card-desc{
+    max-height: 200px;
+}
+
+/*
+                                                                                                                                           
+        CCCCCCCCCCCCC                                            tttt                                                        tttt          
+     CCC::::::::::::C                                         ttt:::t                                                     ttt:::t          
+   CC:::::::::::::::C                                         t:::::t                                                     t:::::t          
+  C:::::CCCCCCCC::::C                                         t:::::t                                                     t:::::t          
+ C:::::C       CCCCCC   ooooooooooo   nnnn  nnnnnnnn    ttttttt:::::ttttttt      aaaaaaaaaaaaa      ccccccccccccccccttttttt:::::ttttttt    
+C:::::C               oo:::::::::::oo n:::nn::::::::nn  t:::::::::::::::::t      a::::::::::::a   cc:::::::::::::::ct:::::::::::::::::t    
+C:::::C              o:::::::::::::::on::::::::::::::nn t:::::::::::::::::t      aaaaaaaaa:::::a c:::::::::::::::::ct:::::::::::::::::t    
+C:::::C              o:::::ooooo:::::onn:::::::::::::::ntttttt:::::::tttttt               a::::ac:::::::cccccc:::::ctttttt:::::::tttttt    
+C:::::C              o::::o     o::::o  n:::::nnnn:::::n      t:::::t              aaaaaaa:::::ac::::::c     ccccccc      t:::::t          
+C:::::C              o::::o     o::::o  n::::n    n::::n      t:::::t            aa::::::::::::ac:::::c                   t:::::t          
+C:::::C              o::::o     o::::o  n::::n    n::::n      t:::::t           a::::aaaa::::::ac:::::c                   t:::::t          
+ C:::::C       CCCCCCo::::o     o::::o  n::::n    n::::n      t:::::t    tttttta::::a    a:::::ac::::::c     ccccccc      t:::::t    tttttt
+  C:::::CCCCCCCC::::Co:::::ooooo:::::o  n::::n    n::::n      t::::::tttt:::::ta::::a    a:::::ac:::::::cccccc:::::c      t::::::tttt:::::t
+   CC:::::::::::::::Co:::::::::::::::o  n::::n    n::::n      tt::::::::::::::ta:::::aaaa::::::a c:::::::::::::::::c      tt::::::::::::::t
+     CCC::::::::::::C oo:::::::::::oo   n::::n    n::::n        tt:::::::::::tt a::::::::::aa:::a cc:::::::::::::::c        tt:::::::::::tt
+        CCCCCCCCCCCCC   ooooooooooo     nnnnnn    nnnnnn          ttttttttttt    aaaaaaaaaa  aaaa   cccccccccccccccc          ttttttttttt  
+*/
+#contact {
+    width: 90%;
+    margin: auto;
+}
+.contact-header {
+    font-size: 3rem;
+    text-align: center;
+    padding: 0.5em;
+    
+    background-color: var(--theme-light-orange);
+    color: var(--theme-black);
+}
+.contact-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5em 0;
+    transition: transform 0.5s, filter 0.5s;
+    transform-origin: left;
+    filter: sepia(80%);
+}
+.contact-item span {
+    color: var(--theme-white);
+    transition: color 0.5s;
+}
+.contact-item:hover .blue {
+    color: var(--theme-blue);
+}
+.contact-item:hover .pink {
+    color: var(--theme-pink);
+}
+.contact-item:hover {
+    transform: scale(1.1);
+    filter: none;
+}
+.contact-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 25%;
+    margin-right: 0.5em;
+}
+#contact a {
+    text-decoration: none;
+}
+
+.contact-back {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    transition: transform 0.5s, color 0.5s;
+    transform-origin: right;
+}
+.contact-back:hover {
+    transform: scale(1.1);
+    color: var(--theme-pink);
+    cursor: pointer;
+}
+.contact-back-arrow {
+    --arrow-size: 0.35rem;
+    --arrow-thickness: 0.25rem;
+    margin: 0 1em;
+    box-sizing: border-box;
+    transform: rotate(-45deg);
+    border-right: solid var(--theme-gray) var(--arrow-thickness);
+    border-bottom: solid var(--theme-gray) var(--arrow-thickness);
+    display: inline-block;
+    padding: var(--arrow-size);
+    transition: transform 0.5s, border-right-color 0.5s, border-bottom-color 0.5s;
+}
+.contact-back:hover .contact-back-arrow{
+    transform: scale(1.1) rotate(-45deg);
+    border-right-color: var(--theme-black);
+    border-bottom-color: var(--theme-black);
+    cursor: pointer;
+}

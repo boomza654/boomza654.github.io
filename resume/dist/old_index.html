@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Boom's website</title>
+  <link rel="stylesheet" href="./old_index.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+   
+
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <!-- Expose elkjs layouter to the index bundle -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  </script>
+
+  <!-- <script type="application/javascript">
+    var stageDiv = document.getElementById('stage');
+    var visEngine = new visModule.Game({
+      stageDiv: stageDiv
+    });
+
+    window.addEventListener('keydown', visEngine.keyDown);
+    window.addEventListener('keyup', visEngine.keyUp);
+    // window.setInterval(gameInstance.update, 1000/ gameModule.Game.frameRate);
+
+    var previousTimeStamp;
+
+    function step(timestamp) {
+      if (previousTimeStamp !== undefined) {
+        visEngine.update({
+          dt: timestamp - previousTimeStamp
+        });
+      }
+      previousTimeStamp = timestamp;
+      window.requestAnimationFrame(step);
+    }
+
+    window.requestAnimationFrame(step);
+    
+    
+  </script> -->
+
+
+
+  <!-- ์ Do a normal web design here  -->
+  <div class="intro-container">
+    
+    <div class="intro-backanim">
+      <div class="intro-backanim-particle"></div>
+      
+      <div class="intro-backanim-particle" style="--particle-left : 50vw; --particle-delay: -2s;"></div>
+      <div class="intro-backanim-particle" style="--particle-left : 60vw; --particle-delay: -7s;"></div>
+      <div class="intro-backanim-particle" style="--particle-left : 70vw; --particle-delay: -5s;"></div>
+      <div class="intro-backanim-particle" style="--particle-left : 10vw; --particle-delay: -5s;"></div>
+      <div class="intro-backanim-particle" style="--particle-left : 20vw; --particle-delay: -13s;"></div>
+      
+      <div class="intro-backanim-particle" style="--particle-color:var(--theme-blue);--particle-left : 30vw; --particle-delay: -6s;"></div>
+      <div class="intro-backanim-particle" style="--particle-color:var(--theme-blue);--particle-left : 40vw; --particle-delay: -1s;"></div>
+      <div class="intro-backanim-particle" style="--particle-color:var(--theme-blue);--particle-left : 80vw; --particle-delay: -5s;"></div>
+      <div class="intro-backanim-particle" style="--particle-color:var(--theme-blue);--particle-left : 90vw; --particle-delay: -9s;"></div>
+
+      <div class="intro-backanim-particle" style="--particle-color:var(--theme-purple);--particle-left : 30vw; --particle-delay: -9s;"></div>
+      <div class="intro-backanim-particle" style="--particle-color:var(--theme-purple);--particle-left : 90vw; --particle-delay: -4s;"></div>
+      <div class="intro-backanim-particle" style="--particle-color:var(--theme-purple);--particle-left : 50vw; --particle-delay: -3s;"></div>
+      <div class="intro-backanim-particle" style="--particle-color:var(--theme-purple);--particle-left : 80vw; --particle-delay: -8s;"></div>
+      
+      <div class="intro-backanim-particle" style="--particle-color:var(--theme-light-pink);--particle-left : 70vw; --particle-delay: -6s;"></div>
+      <div class="intro-backanim-particle" style="--particle-color:var(--theme-light-pink);--particle-left : 10vw; --particle-delay: -4s;"></div>
+      <div class="intro-backanim-particle" style="--particle-color:var(--theme-light-pink);--particle-left : 90vw; --particle-delay: -1s;"></div>
+      <div class="intro-backanim-particle" style="--particle-color:var(--theme-light-pink);--particle-left : 0vw; --particle-delay: -2s;"></div>
+    </div>
+    <div class="flex-u"></div>
+    <div id="intro" >
+      <div class="intro-page">
+
+
+        <div class="flex-col intro-textcontainer">
+          <div class="intro-text1" 
+              data-aos-anchor="#intro"
+              data-aos="fade-right"
+              data-aos-delay="100">
+              Hello, I'm <span class="pink">Boom</span></div>
+          <div class="intro-text2"
+              data-aos-anchor="#intro"
+              data-aos="fade-right"
+              data-aos-delay="200">
+              A versatile <span class="blue">software developer</span> who is </div>
+        <!-- <div class="intro-text3"
+                data-aos="fade-right"
+                data-aos-delay="300">
+          and </div> -->
+          <div class="intro-text4"
+                data-aos-anchor="#intro"
+                data-aos="fade-right"
+                data-aos-delay="300">
+                passionate in <span class="blue">holistic problem solving</span></div>
+        </div>
+        <img class="intro-profilepic" src="./images/profilePIC2.jpg"
+                data-aos="fade-right"
+                data-aos-anchor="#intro"
+                data-aos-delay="400">
+      </div>
+      
+    </div>
+    <div class="flex-u"></div>
+
+    <div class="intro-arrowcontainer-fade"
+    data-aos="fade-right"
+    data-aos-anchor="#intro"
+    data-aos-delay="500"
+    style="text-align: center;">
+      <div class="intro-arrowcontainer">
+        <a href="#about">
+          <div class="intro-arrow"></div> Learn More
+        </a>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="main-container">
+
+    <div class="flex-col flex-u">
+      <div id="about">
+        <h1 class="about-header" data-aos="fade-right" data-aos-anchor="#about">About Me</h1>
+        <div class="about-table" >
+          <div class="about-table-col1" data-aos="fade-right" data-aos-delay="100" data-aos-anchor="#about">Name:</div>               
+            <div class="about-table-col2" data-aos="fade-right" data-aos-delay="100" data-aos-anchor="#about"><span class="blue">"Krittamate Tiankanon"</span></div>
+          <div class="about-table-col1" data-aos="fade-right" data-aos-delay="200" data-aos-anchor="#about">Nationality:</div>        
+            <div class="about-table-col2" data-aos="fade-right" data-aos-delay="200" data-aos-anchor="#about"><span class="blue">"Thai"</span></div>
+          <div class="about-table-col1" data-aos="fade-right" data-aos-delay="300" data-aos-anchor="#about">University:</div>            
+            <div class="about-table-col2" data-aos="fade-right" data-aos-delay="300" data-aos-anchor="#about"><span class="blue">"MIT"</span> <span class="gray">/* Massachusetts Institute of Technology */</span></div>
+          <div class="about-table-col1" data-aos="fade-right" data-aos-delay="400" data-aos-anchor="#about">Degree:</div>               
+            <div class="about-table-col2" data-aos="fade-right" data-aos-delay="400" data-aos-anchor="#about"><span class="blue">"Masters of Engineering"</span></div>
+          <div class="about-table-col1" data-aos="fade-right" data-aos-delay="500" data-aos-anchor="#about">Major:</div>               
+            <div class="about-table-col2" data-aos="fade-right" data-aos-delay="500" data-aos-anchor="#about"><span class="blue">"Electrical Engineer and Computer Science"</span></div>
+          
+        </div>
+      </div>
+      <div id="skill">
+        <h1 class="skill-header" data-aos="fade-down" data-aos-anchor="#skill">Skills</h1>
+        <div class="skill-container">
+          <div class="skill-item" data-aos="fade-down" data-aos-anchor="#skill" data-aos-delay="100">
+            <img src="./images/skills/python.png" class="skill-icon">
+            <span  > Python3 </span>
+          </div>
+  
+          
+          <div class="skill-item"  data-aos="fade-down" data-aos-anchor="#skill" data-aos-delay="200">
+            <img src="./images/skills/java.png" class="skill-icon">
+            <span  > Java </span>
+          </div>
+  
+          
+          <div class="skill-item"  data-aos="fade-down" data-aos-anchor="#skill" data-aos-delay="300">
+            <img src="./images/skills/c++.png" class="skill-icon">
+            <span  > C/C++ </span>
+          </div>
+  
+          <div class="skill-item"  data-aos="fade-down" data-aos-anchor="#skill" data-aos-delay="400">
+            <img src="./images/skills/pytorch.png" class="skill-icon">
+            <span  > PyTorch </span>
+          </div>
+  
+          <div class="skill-item"  data-aos="fade-down" data-aos-anchor="#skill" data-aos-delay="200">
+            <img src="./images/skills/html.png" class="skill-icon">
+            <span  > HTML </span>
+          </div>
+
+          <div class="skill-item"  data-aos="fade-down" data-aos-anchor="#skill" data-aos-delay="300">
+            <img src="./images/skills/css.png" class="skill-icon">
+            <span  > CSS </span>
+          </div>
+
+          <div class="skill-item"  data-aos="fade-down" data-aos-anchor="#skill" data-aos-delay="400">
+            <img src="./images/skills/js.png" class="skill-icon" >
+            <span  > Javascript </span>
+          </div>
+
+          <div class="skill-item"  data-aos="fade-down" data-aos-anchor="#skill" data-aos-delay="500">
+            <img src="./images/skills/typescript.png" class="skill-icon">
+            <span  > TypeScript </span>
+          </div>
+          
+          
+          <div class="skill-item"  data-aos="fade-down" data-aos-anchor="#skill" data-aos-delay="300">
+            <img src="./images/skills/go.png" class="skill-icon">
+            <span  > GoLang </span>
+          </div>
+
+          <div class="skill-item"  data-aos="fade-down" data-aos-anchor="#skill" data-aos-delay="400">
+            <img src="./images/skills/mysql.png" class="skill-icon">
+            <span  > SQL </span>
+          </div>
+          
+          <div class="skill-item"  data-aos="fade-down" data-aos-anchor="#skill" data-aos-delay="500">
+            <img src="./images/skills/react.png" class="skill-icon">
+            <span  > React </span>
+          </div>
+  
+          
+          <div class="skill-item"  data-aos="fade-down" data-aos-anchor="#skill" data-aos-delay="600">
+            <img src="./images/skills/vue.png" class="skill-icon-square">
+            <span  > VueJS </span>
+          </div>
+          
+          <div class="skill-item"  data-aos="fade-down" data-aos-anchor="#skill" data-aos-delay="400">
+            <img src="./images/skills/csharp.png" class="skill-icon" style="filter: hue-rotate(90deg);">
+            <span  > C# </span>
+          </div>
+  
+  
+          
+          <div class="skill-item"  data-aos="fade-down" data-aos-anchor="#skill" data-aos-delay="500">
+            <img src="./images/skills/bluespec.png" class="skill-icon">
+            <span  > Bluespec<br/>Minispec </span>
+          </div>
+  
+          <div class="skill-item"  data-aos="fade-down" data-aos-anchor="#skill" data-aos-delay="600">
+            <img src="./images/skills/assembly.png" class="skill-icon">
+            <span  > Assembly<br/>RISC-V / x86 </span>
+          </div>
+  
+          <div class="skill-item"  data-aos="fade-down" data-aos-anchor="#skill" data-aos-delay="700">
+            <img src="./images/skills/vb.png" class="skill-icon">
+            <span  > VB .NET </span>
+          </div>
+
+          
+          <div class="skill-item"  data-aos="fade-down" data-aos-anchor="#skill" data-aos-delay="500">
+            <img src="./images/skills/opengl.png" class="skill-icon">
+            <span  > OpenGL / GLSL </span>
+          </div>
+          
+          <div class="skill-item"  data-aos="fade-down" data-aos-anchor="#skill" data-aos-delay="600">
+            <img src="./images/skills/coq.png" class="skill-icon">
+            <span  > Coq </span>
+          </div>
+          
+          <div class="skill-item"  data-aos="fade-down" data-aos-anchor="#skill" data-aos-delay="700">
+            <img src="./images/skills/hf.png" class="skill-icon">
+            <span  > Huggingface </span>
+          </div>
+
+          <div class="skill-item"  data-aos="fade-down" data-aos-anchor="#skill" data-aos-delay="800">
+            <img src="./images/skills/sklearn.svg" class="skill-icon">
+            <span  > Scikit-Learn </span>
+          </div>
+
+          
+        </div>
+      </div>
+      
+    </div>
+
+
+    <div id="courses">
+      <h1 class="courses-header" data-aos="fade-left" data-aos-anchor="#courses">Courses Taken</h1>
+      <div class="courses-container">
+        <div class="courses-container-group">
+          <div  data-aos="fade-left" data-aos-anchor="#courses" data-aos-delay="100">
+            <div class="courses-container-item">
+              <span >6.822 Formal Reasoning About Programs </span>
+            </div>
+          </div>
+          <div  data-aos="fade-right" data-aos-anchor="#courses" data-aos-delay="100">
+            <div class="courses-container-item">
+              <span >6.837 Computer Graphics </span>
+            </div>
+          </div>
+          <div  data-aos="fade-left" data-aos-anchor="#courses" data-aos-delay="200">
+            <div class="courses-container-item">
+              <span >6.823 Computer System Architecture</span>
+            </div>
+          </div>
+          
+          <div data-aos="fade-right" data-aos-anchor="#courses" data-aos-delay="200">
+            <div class="courses-container-item">
+              <span >6.814 Database Systems</span>
+            </div>
+          </div>
+          
+          <div data-aos="fade-left" data-aos-anchor="#courses" data-aos-delay="300">
+            <div class="courses-container-item">
+              <span >6.172 Performance Engineering of Software Systems</span>
+            </div>
+          </div>
+
+          <div data-aos="fade-right" data-aos-anchor="#courses" data-aos-delay="300">
+            <div class="courses-container-item">
+              <span >6.858 Computer Systems Security</span>
+            </div>
+          </div>
+          <div  data-aos="fade-left" data-aos-anchor="#courses" data-aos-delay="400">
+            <div class="courses-container-item">
+              <span >6.08 Introduction to EECS via Interconnected Embedded Systems </span>
+            </div>
+          </div>
+          <div data-aos="fade-right" data-aos-anchor="#courses" data-aos-delay="400">
+            <div class="courses-container-item">
+              <span >6.148 Web Lab: A Web Programming Class and Competition</span>
+            </div>
+          </div>
+
+          <div data-aos="fade-left" data-aos-anchor="#courses" data-aos-delay="500">
+            <div class="courses-container-item">
+              <span >6.147 The Battlecode Programming Competition</span>
+            </div>
+          </div>
+          
+          <div data-aos="fade-right" data-aos-anchor="#courses" data-aos-delay="500">
+            <div class="courses-container-item">
+              <span >6.031 Software Construction</span>
+            </div>
+          </div>
+
+          <div data-aos="fade-left" data-aos-anchor="#courses" data-aos-delay="600">
+            <div class="courses-container-item">
+              <span >6.036 Introduction to Machine Learning</span>
+            </div>
+          </div>
+          
+          <div data-aos="fade-right" data-aos-anchor="#courses" data-aos-delay="600">
+            <div class="courses-container-item">
+              <span >6.011 Signals, Systems and Inference</span>
+            </div>
+          </div>
+          
+          <div data-aos="fade-left" data-aos-anchor="#courses" data-aos-delay="700">
+            <div class="courses-container-item">
+              <span >6.033 Computer System Engineering</span>
+            </div>
+          </div>
+          
+          <div data-aos="fade-right" data-aos-anchor="#courses" data-aos-delay="700">
+            <div class="courses-container-item">
+              <span >6.046 Design and Analysis of Algorithms</span>
+            </div>
+          </div>
+
+          <div data-aos="fade-left" data-aos-anchor="#courses" data-aos-delay="800">
+            <div class="courses-container-item">
+              <span >6.004 Computational Structure</span>
+            </div>
+          </div>
+
+          <div data-aos="fade-right" data-aos-anchor="#courses" data-aos-delay="800">
+            <div class="courses-container-item">
+              <span >6.08 Embedded  Systems</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <h1 class="activities-header" data-aos="fade-right" data-aos-anchor="#activities" >Activities / Project</h1>
+  <div class="node-container">
+    <div id="activities">
+      
+      <div class="activities-container">
+        
+        <div class="activities-card" data-aos="fade-right" data-aos-anchor="#activities" data-aos-delay="100">
+          <div class="activities-card-column-container1">
+            <div class="activities-card-column">
+              <div class="activities-card-top">
+                <div class="activities-card-top-textcontainer1">
+                  <h2 class="pink">Minispec Visualizer</h2>
+                  <h3 class="blue">Winter 2019 - Summer 2023 </h3>
+                </div>
+              </div>
+              <div class="activities-card-desc">
+                <p>Minispec Visualizer is a program that visualizes Hardware Description Language code (Minispec) 
+                  into a schematic circuit with options to choose multiple depths of circuit visualization,
+                varying from gate level to top-module behavioral level.</p>
+          
+                <p>Released as a part of Minispec open-source repository and used in 6.004
+                Computational Structures course's infrastructure to facilitate students in learning
+                about hardware architecture.</p>
+                <a href="https://github.mit.edu/boomzaza/minispec/tree/visualizer">
+                  <div class="activities-card-desc-link">
+                    <div class="flex-u"></div>
+                    <div class="activities-card-desc-link-arrow"></div>
+                    <div class="activities-card-desc-link-text">
+                      <span class="pink"> redirect </span>
+                      (
+                      <span class="blue">
+                        "github.mit.edu/boomzaza/<br/>minispec/tree/visualizer"
+                      </span>
+                      );
+                    </div>
+          
+                    <div class="flex-u"></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="activities-card-column">
+              <div class="activities-card-image-center">
+                <img src="./images/visualizercode.PNG" class="activities-card-image"/>  
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="activities-card" data-aos="fade-right" data-aos-anchor="#activities" data-aos-delay="200">
+          <div class="activities-card-column-container2">
+            <div class="activities-card-column">
+              <div class="activities-card-top">
+                <div class="activities-card-top-textcontainer2">
+                  <h2 class="pink">Arduino Human Pitch Detection</h2>
+                  <h3 class="blue">Spring 2022</h3>
+                </div>
+              </div>
+              <div class="activities-card-desc">
+                <p>Embedded an algorithm to detect human's singing pitch onto ESP32 Arduino board using modified SWIPE pitch detection algorithm  </p>
+                <p> The systems uses multiple signal processing techniques such as Short-time Fast Fourier Transform and Cepstral Analysis to accurately estimate the pitch of the sounds under moderate level of noise.</p>
+               
+              </div>
+            </div>
+            <div class="activities-card-column">
+              <div class="activities-card-image-center">
+                <img src="./images/pitchdetect.PNG" class="activities-card-image"/>  
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="activities-card" data-aos="fade-left" data-aos-anchor="#activities" data-aos-delay="200">
+          <div class="activities-card-column-container1">
+            <div class="activities-card-column">
+              <div class="activities-card-top">
+                <div class="activities-card-top-textcontainer1">
+                  <h2 class="pink">Chladni Wave Resonance Simulator</h2>
+                  <h3 class="blue">Fall 2021</h3>
+                </div>
+              </div>
+              <div class="activities-card-desc">
+                <p>Programmed a wave propagation simulation 
+                  to visualize the Chladni standing wave pattern on any free-form mesh </p>
+                <p>The simulation involves multiple numerical analysis techniques such as RK4 Integrator and Laplace-Beltrami operator, and are rendered using custom vertex and fragment shader from C++ OpenGL API.</p>
+               
+              </div>
+            </div>
+            <div class="activities-card-column">
+              <div class="activities-card-image-center">
+                <img src="./images/chladni.PNG" class="activities-card-image"/>  
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="activities-card" data-aos="fade-right" data-aos-anchor="#activities" data-aos-delay="300">
+          <div class="activities-card-column-container2">
+            <div class="activities-card-column">
+              <div class="activities-card-top">
+                <div class="activities-card-top-textcontainer2">
+                  <h2 class="pink">Battlecode Competition</h2>
+                  <h3 class="blue">Winter 2021</h3>
+                </div>
+              </div>
+              <div class="activities-card-desc">
+                <p>Battlecode is a real-time strategy game, for which competitors write an AI player 
+                  to strategically manage a robot army and control how robots work together to defeat 
+                  the enemy team. </p>
+
+                <p>The AI player involved message-efficient distributed communication protocol 
+                  for different entity on the board to cooperate and strategically win against the opponent.</p>
+                <!-- <a href="http://2021.battlecode.org/visualizer.html?tournamentMode&https://2021.battlecode.org/replays/3d133cd909d71eb244ae41d88e40ef-0.bc21">
+            
+                  <div class="activities-card-desc-link">
+                    <div class="flex-u"></div>
+                    <div class="activities-card-desc-link-arrow"></div>
+                    <div class="activities-card-desc-link-text">
+                      <span class="pink"> watch </span>
+                      (
+                      <span class="blue">
+                        "some of our Battlecode matches"
+                      </span>
+                      ,
+                      <span class="orange">
+                        our_team
+                      </span>
+                      <span class="pink">
+                        =
+                      </span> 
+                      <span class="blue">
+                        "Dis Team"
+                      </span>
+                      );
+                    </div>
+          
+                    <div class="flex-u"></div>
+                  </div>
+                </a> -->
+              </div>
+            </div>
+            <div class="activities-card-column">
+              <div class="activities-card-image-center">
+                <img src="./images/battlecode.PNG" class="activities-card-image"/>  
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+        <div class="activities-card" data-aos="fade-left" data-aos-anchor="#activities" data-aos-delay="400">
+          <div class="activities-card-column-container1">
+            <div class="activities-card-column">
+              <div class="activities-card-top">
+                <div class="activities-card-top-textcontainer1">
+                  <h2 class="pink">Journext: Travel planning website</h2>
+                  <h3 class="blue">Winter 2020 </h3>
+                </div>
+              </div>
+              <div class="activities-card-desc">
+                <p>A travel planning website that merges map, flight, hotels, and calendar into one web app.</p>
+                <p> Users can plan their travel on a calendar as well as look at locations 
+                  of multiple tourists spot simultaneously, allowing users to visualize their travle plan more vividly.</p>
+                <p> Created with React.js and KonvaJS using geolocation data from OpenStreetMap API</p>
+
+                <!-- <a href="https://journext.herokuapp.com">
+                  <div class="activities-card-desc-link">
+                    <div class="flex-u"></div>
+                    <div class="activities-card-desc-link-arrow"></div>
+                    <div class="activities-card-desc-link-text">
+                      <span class="pink"> try_out </span>
+                      (
+                      <span class="blue">
+                        "journext.herokuapp.com"
+                      </span>
+                      );
+                    </div>
+          
+                    <div class="flex-u"></div>
+                  </div>
+                </a> -->
+              </div>
+            </div>
+            <div class="activities-card-column">
+              <div class="activities-card-image-center">
+                <img src="./images/journext.PNG" class="activities-card-image"/>  
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="activities-card" data-aos="fade-right" data-aos-anchor="#activities" data-aos-delay="500">
+          <div class="activities-card-column-container2">
+            <div class="activities-card-column">
+              <div class="activities-card-top">
+                <div class="activities-card-top-textcontainer2">
+                  <h2 class="pink">Competitive Programming</h2>
+                  <h3 class="blue">Summer 2019</h3>
+                </div>
+              </div>
+              <div class="activities-card-desc">
+                <p>- Participated in the 2nd round of Facebook Hacker Cup 2019 and placed in the TOP 500 using C++ code only.</p>
+                <p>- Received 15th place among 13885 competitors on Codeforces competition round #569 (Division 2)</p>
+                <p>- Participated in the 2nd round of Google Codejam 2019.</p> 
+              </div>
+            </div>
+            <div class="activities-card-column">
+              <div class="activities-card-image-center">
+                <img src="./images/codejam.PNG" class="activities-card-image"/>  
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+  <h1 class="experiences-header" data-aos="fade-right" data-aos-anchor="#experiences">Work Experiences</h1>
+  <div class="node-container">
+    <div id="experiences">
+      <div class="experiences-container">
+
+        <div class="experiences-card" data-aos="fade-right" data-aos-anchor="#experiences" >
+          <div class="experiences-card-top">
+            <div style="background-image: url('./images/cariva.png');" class="experiences-card-icon"></div>
+            <div class="experience-card-top-textcontainer">
+              <h2 class="pink">Medical and AI Specialist</h2>
+              <h3 class="blue">Cariva (Thailand) Co. Ltd. </h3>
+              <h3 class="gray">Summer 2023 - Fall 2024 </h3>
+            </div>
+          </div>
+          <div class="experiences-card-desc">
+            <p>
+              Spearheaded the Preceptorcore project, leading a multidisciplinary team to develop an LLM-agentic medical diagnostic system. Achieved a 50% reduction in misdiagnosis rates for challenging and rare diseases compared to state-of-the-art models.
+            </p>
+            <p>
+              Fine-tuned bilingual, code-switched medical translation Seq2Seq models and LLMs, enabling seamless interaction between Thai medical professionals and English-based medical resources. Our translator outperformed Google NMT, with a 72% preference rate among medical professionals.
+            </p>
+            <p>
+              Managed the coordination of interdisciplinary teams across AI, development, medical, and business units for three B2B products. Streamlined integration and communication processes, driving efficient collaboration and successful product outcomes.
+            </p>
+          </div>
+        </div>
+
+        <div class="experiences-card" data-aos="fade-right" data-aos-anchor="#experiences" >
+          <div class="experiences-card-top">
+            <div style="background-image: url('./images/MIT.png');" class="experiences-card-icon"></div>
+            <div class="experience-card-top-textcontainer">
+              <h2 class="pink">Teaching and laboratory assistant</h2>
+              <h3 class="blue">Massachusetts Institute of Technology </h3>
+              <h3 class="gray">Spring 2019 - Spring 2023 </h3>
+            </div>
+          </div>
+          <div class="experiences-card-desc">
+            <p>
+              Dedicated 20-25 hours weekly, both in-person and online via Piazza, instructing on digital system design and computer architecture fundamentals.
+            </p>
+          </div>
+        </div>
+
+        <div class="experiences-card" data-aos="fade-right" data-aos-anchor="#experiences" data-aos-delay="100">
+          <div class="experiences-card-top">
+            <div style="background-image: url('./images/inkbit.png');" class="experiences-card-icon"></div>
+            <div class="experience-card-top-textcontainer">
+              <h2 class="pink">Next Generation System Internship</h2>
+              <h3 class="blue">Inkbit Corporation </h3>
+              <h3 class="gray">Summer 2022 - Fall 2022 </h3>
+            </div>
+          </div>
+          <div class="experiences-card-desc">
+            <p>
+              Employed reinforcement learning to enhance the Vision-controlled Jetting 3D printer's resolution, allowing printers to tolerate topography scanning misalignment and reducing printing artifacts rate.
+            </p>
+          </div>
+        </div>
+
+     
+
+
+        <div class="experiences-card" data-aos="fade-right" data-aos-anchor="#experiences" data-aos-delay="200">
+          <div class="experiences-card-top">
+            <div style="background-image: url('./images/tencent.png');" class="experiences-card-icon"></div>
+            <div class="experience-card-top-textcontainer">
+              <h2 class="pink">Full-stack internship</h2>
+              <h3 class="blue">Tencent (Thailand) Company Ltd.</h3>
+              <h3 class="gray">Summer 2021 </h3>
+            </div>
+          </div>
+          <div class="experiences-card-desc">
+            <p>Innovated a hybrid machine learning model for unsupervised text clustering, particularly for news, and integrated an automated news scraping and ML training pipeline into the continuous deployment cycle.</p>
+          </div>
+        </div>
+
+        <div class="experiences-card" data-aos="fade-right" data-aos-anchor="#experiences" data-aos-delay="300">
+          <div class="experiences-card-top">
+            <div style="background-image: url('./images/scb.png');" class="experiences-card-icon"></div>
+            <div class="experience-card-top-textcontainer">
+              <h2 class="pink">Data scientist internship</h2>
+              <h3 class="blue">Siam Commercial Bank Public Company Ltd.</h3>
+              <h3 class="gray">Summer 2020 </h3>
+            </div>
+          </div>
+          <div class="experiences-card-desc">
+            <p>Developed a machine learning intent classification model for Thai language chatbot text classification, focusing on finance-related intents, with at least 20% higher accuracy than Google's Dialogflow agents.</p>
+          </div>
+        </div>
+
+        <div class="experiences-card" data-aos="fade-right" data-aos-anchor="#experiences" data-aos-delay="400">
+          <div class="experiences-card-top">
+            <div style="background-image: url('./images/full.png');" class="experiences-card-icon"></div>
+            <div class="experience-card-top-textcontainer">
+              <h2 class="pink">Software developer internship</h2>
+              <h3 class="blue">Siam Filter Products Ltd.</h3>
+              <h3 class="gray">Summer 2019 </h3>
+            </div>
+          </div>
+          <div class="experiences-card-desc">
+            <p>Created a user-friendly .NET Framework C# SQL database management GUI, significantly improving data
+              management and synchronization with Microsoft Azure SQL Database for non-technical managers </p>
+          </div>
+        </div>
+
+        <div class="experiences-card" data-aos="fade-right" data-aos-anchor="#experiences" data-aos-delay="500">
+          <div class="experiences-card-top">
+            <div style="background-image: url('./images/nerdynite.jpg');" class="experiences-card-icon"></div>
+            <div class="experience-card-top-textcontainer">
+              <h2 class="pink">Co-founder</h2>
+              <h3 class="blue">Nerdy Nite educational program</h3>
+              <h3 class="gray">Summer 2018 </h3>
+            </div>
+          </div>
+          <div class="experiences-card-desc">
+            <p>Co-launched an educational initiative focused on fostering discussion-based learning on human rights, utilizing a web-based platform to enhance participant engagement and analysis.</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  <h1 class="contact-header" data-aos="fade-right" data-aos-anchor="#contact">Contact</h1>
+  <div class="node-container">
+    <div id="contact">
+      <a href="mailto:krittamate.t@gmail.com" class="blue">
+        <div data-aos="fade-right" data-aos-anchor="#contact" data-aos-delay="100">
+          <div class="contact-item">
+            <img src="./images/gmail.PNG" class="contact-icon">
+            <span>
+              : <span class="pink">redirect</span>(<span class="blue">"krittamate.t@gmail.com"</span>);
+            </span>
+          </div>
+        </div>
+      </a>
+        
+      <a href="https://www.linkedin.com/in/krittamate-tiankanon-4892b4195/">
+        <div data-aos="fade-right" data-aos-anchor="#contact" data-aos-delay="100">
+          <div class="contact-item">
+            <img src="./images/linkedin.png" class="contact-icon">
+            <span>
+              : <span class="pink">redirect</span>(<span class="blue">"linkedin.com/in/krittamate-tiankanon-4892b4195"</span>);
+            </span>
+          </div>
+          
+        </div>
+      </a>
+      <a href="mailto:boomza654@alum.mit.edu" class="blue">
+        <div data-aos="fade-right" data-aos-anchor="#contact" data-aos-delay="200">
+          <div class="contact-item">
+            <img src="./images/M_MIT.png" class="contact-icon">
+            <span>
+              : <span class="pink">redirect</span>(<span class="blue">"boomza654@alum.mit.edu"</span>);
+            </span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+
+</body>
+</html>
